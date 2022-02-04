@@ -26,7 +26,7 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name="bussines")
+@Table(name="bussinesses")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -58,6 +58,6 @@ public class Bussines {
 			joinColumns = @JoinColumn(name = "bussines_id"),
 			inverseJoinColumns = @JoinColumn(name = "categories_id")
 			)
-	    private List<Categories>categories;
+	    private List<Category>categories;
 
 }

@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="role")
+@Table(name="roles")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,9 +31,7 @@ public class Role {
 	
 	private Long id;
 	@NotNull
-	private String admin;
-	@NotNull
-	private String user;
+	private String name;
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;
