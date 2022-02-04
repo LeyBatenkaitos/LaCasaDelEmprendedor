@@ -1,0 +1,28 @@
+2022-02-03 12:54:50.285  INFO 10192 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on DESKTOP-7RH3MJD with PID 10192 (C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor\target\classes started by MI PC in C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor)
+2022-02-03 12:54:50.288  INFO 10192 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
+2022-02-03 12:54:50.396  INFO 10192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-03 12:54:50.397  INFO 10192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-03 12:54:51.746  INFO 10192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 12:54:51.775  INFO 10192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2022-02-03 12:54:53.694  INFO 10192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 12:54:53.746  INFO 10192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 12:54:53.747  INFO 10192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 12:54:53.957  INFO 10192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 12:54:53.958  INFO 10192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3560 ms
+2022-02-03 12:54:54.186  INFO 10192 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 12:54:54.263  INFO 10192 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-03 12:54:54.530  INFO 10192 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 12:54:54.726  INFO 10192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 12:54:56.529  INFO 10192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 12:54:56.586  INFO 10192 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-03 12:55:17.842  INFO 10192 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 12:55:17.863  INFO 10192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 12:55:17.942  WARN 10192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 12:55:18.471  INFO 10192 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 241e391e-0d90-43cc-8e4f-e6db09a55465
+
+2022-02-03 12:55:20.734  INFO 10192 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e04b459, org.springframework.security.web.context.SecurityContextPersistenceFilter@55a127bb, org.springframework.security.web.header.HeaderWriterFilter@25e96000, org.springframework.security.web.csrf.CsrfFilter@26bdc93b, org.springframework.security.web.authentication.logout.LogoutFilter@7d7a4326, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ba3655, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@53823343, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1e72f8b6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@576f0fee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75c5e9ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ba04d8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31cd84e9, org.springframework.security.web.session.SessionManagementFilter@7062b7d5, org.springframework.security.web.access.ExceptionTranslationFilter@3b91bea0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4438560e]
+2022-02-03 12:55:20.998  INFO 10192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-03 12:55:21.393  INFO 10192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 12:55:21.414  INFO 10192 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 31.757 seconds (JVM running for 34.107)
