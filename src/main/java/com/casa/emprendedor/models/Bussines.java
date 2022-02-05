@@ -60,7 +60,7 @@ public class Bussines {
 			joinColumns = @JoinColumn(name = "bussines_id"),
 			inverseJoinColumns = @JoinColumn(name = "categories_id")
 			)
-	    private List<Categories>categories;
+	    private List<Category>category;
 	
 	@PrePersist
 	public void prePersist() {
