@@ -9,9 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -22,11 +22,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="roles")
+@Table(name="categories")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Role {
+public class Category {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,17 +40,11 @@ public class Role {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 	
-	@OneToMany(mappedBy="role", fetch = FetchType.LAZY)
-	private List<User> users;
-	
-	@PrePersist
-	public void prePersist() {
-		createdAt = new Date();
-		updatedAt = new Date();
-	}
-	@PreUpdate
-	public void preUpdate() {
-		updatedAt = new Date();
-	}
-
+	@ManyToMany( fetch= FetchType.LAZY)
+	@JoinTable(
+			name = "categories_has_bussines",
+			joinColumns = @JoinColumn(name = "categories_id"),
+			inverseJoinColumns = @JoinColumn(name = "bussines_id")
+			)
+	    private List<Bussines>bussines;
 }
