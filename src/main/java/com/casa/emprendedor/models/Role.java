@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -42,5 +44,15 @@ public class Role {
 	
 	@OneToMany(mappedBy="role", fetch = FetchType.LAZY)
 	private List<User> users;
+	
+	@PrePersist
+	public void prePersist() {
+		createdAt = new Date();
+		updatedAt = new Date();
+	}
+	@PreUpdate
+	public void preUpdate() {
+		updatedAt = new Date();
+	}
 
 }
