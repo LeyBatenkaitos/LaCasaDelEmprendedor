@@ -14,8 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -60,16 +58,6 @@ public class Bussines {
 			joinColumns = @JoinColumn(name = "bussines_id"),
 			inverseJoinColumns = @JoinColumn(name = "categories_id")
 			)
-	    private List<Category>category;
-	
-	@PrePersist
-	public void prePersist() {
-		createdAt = new Date();
-		updatedAt = new Date();
-	}
-	@PreUpdate
-	public void preUpdate() {
-		updatedAt = new Date();
-	}
+	    private List<Category>categories;
 
 }

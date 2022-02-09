@@ -12,8 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -37,6 +35,10 @@ public class User {
 	private String firstname;
 	@NotNull
 	private String lastname;
+	
+	@Column(nullable = false)
+	private String username;
+	
 	@NotNull
 	private String email;
 	@NotNull
@@ -54,14 +56,4 @@ public class User {
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "role_id")
 	private Role role;
-	
-	@PrePersist
-	public void prePersist() {
-		createdAt = new Date();
-		updatedAt = new Date();
-	}
-	@PreUpdate
-	public void preUpdate() {
-		updatedAt = new Date();
-	}
 }
