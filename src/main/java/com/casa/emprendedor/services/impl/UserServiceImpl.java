@@ -1,5 +1,7 @@
 package com.casa.emprendedor.services.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,19 +24,23 @@ public class UserServiceImpl implements UserService{
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Override
-    public User registerUser(User user) {
-        String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+	public User findByEmail(String email) {
+        Optional<User> optionalUser = userRepo.findByEmail(email);
+        if(optionalUser.isPresent()) {
+            return optionalUser.get();
+        } else {
+            return null;
+        }
+    }
+		
+	@Override
+    public User saveWithUserRole(User user) {
+		String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashed);
+        user.setRole(roleRepository.findByName("ROLE_USER"));
         return userRepo.save(user);
     }
-	
-	@Override
-    public void saveWithUserRole(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRole(roleRepository.findByName("ROLE_USER"));
-        userRepo.save(user);
-    }
-     
+ 
 	@Override
     public void saveUserWithAdminRole(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));

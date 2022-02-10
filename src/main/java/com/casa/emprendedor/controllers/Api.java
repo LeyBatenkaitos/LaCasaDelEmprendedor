@@ -17,9 +17,9 @@ public class Api {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping(value="/register", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/api/register", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<User> register(@RequestBody User user) {
-		return new ResponseEntity<>(userService.registerUser(user), HttpStatus.OK);
+		return new ResponseEntity<>(userService.saveWithUserRole(user), HttpStatus.OK);
 	}
 	
 	@GetMapping(value="/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
