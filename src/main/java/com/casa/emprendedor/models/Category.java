@@ -47,4 +47,8 @@ public class Category {
 			inverseJoinColumns = @JoinColumn(name = "bussines_id")
 			)
 	    private List<Bussines>bussines;
+	
+	public void setBussines(Bussines bussines) {
+        this.bussines.add(bussines);
+    }
 }

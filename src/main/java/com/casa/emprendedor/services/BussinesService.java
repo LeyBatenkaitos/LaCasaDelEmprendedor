@@ -9,7 +9,6 @@ public interface BussinesService {
 
 	Bussines createBussines(Bussines bussines);
 
-	List<Bussines> findAllBussinesNoCategory(Category category);
 
 	Bussines findBussines(Long id);
 

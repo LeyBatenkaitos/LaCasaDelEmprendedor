@@ -22,11 +22,6 @@ public class BussinesServiceImpl implements BussinesService {
 	}
 	
 	@Override
-	public List<Bussines> findAllBussinesNoCategory (Category category){
-		return bRepo.findByCategoryNotContains(category);
-	}
-	
-	@Override
 	public Bussines findBussines(Long id) {
 		Optional<Bussines> optionalBussines = bRepo.findById(id);
 		if(optionalBussines.isPresent()) {
@@ -35,5 +30,9 @@ public class BussinesServiceImpl implements BussinesService {
 			return null;
 		}
 	}
+
+
+
+
 
 }
