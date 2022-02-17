@@ -2,6 +2,7 @@ package com.casa.emprendedor.models;
 
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Transient;
+import javax.validation.constraints.*;
+
 import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -32,14 +35,22 @@ public class User {
 	
 	private Long id;
 	@NotNull
-	private String firstname;
+	private String firstName;
 	@NotNull
-	private String lastname;
-	@NotNull
+	private String lastName;
+	
+	@Column(nullable = false)
+	private String username;
+	
+	@Email(message="Debe ingresar un correo electronico valido")
 	private String email;
 	@NotNull
-	@Size(min = 5, message = "Minimo 5 caracteres la contraseña")
+	@Size(min = 5, message = "Su contraseña debe tener un mínimo de 5 caracteres")
 	private String password;
+	
+	@Transient
+	private String passwordConfirmation;
+	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;

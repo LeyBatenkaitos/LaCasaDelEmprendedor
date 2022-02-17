@@ -38,7 +38,7 @@ public class Role {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 	
-	@OneToMany(mappedBy="role", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="role", fetch = FetchType.EAGER)
 	private List<User> users;
 
 }

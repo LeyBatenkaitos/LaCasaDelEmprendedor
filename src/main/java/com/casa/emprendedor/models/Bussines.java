@@ -58,6 +58,5 @@ public class Bussines {
 			joinColumns = @JoinColumn(name = "bussines_id"),
 			inverseJoinColumns = @JoinColumn(name = "categories_id")
 			)
-	    private List<Category>categories;
-
+	    private List<Category>categories;	
 }
