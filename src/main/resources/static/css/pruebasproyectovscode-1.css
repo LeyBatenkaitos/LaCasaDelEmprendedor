@@ -1,0 +1,190 @@
+body{
+    width: 100%;
+}
+.header{
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:#219ebc;
+    width: 90%;
+    padding: 5px;
+    display: flex;
+    flex-flow: row wrap; 
+    height: 300px;
+    margin-left: 5%;
+    background-image: url("casa.jpg");
+
+}
+#logopagina{
+    width: 40%;
+    height: 35%;
+    margin-left: 50px;
+    background-color: #219ebc;
+}
+h1{
+    text-align: center;
+    width: 900px;
+    background-color: #b0703b;
+    color: white;
+    height: 50px;
+    margin-left: 300px;
+    border-radius: 10px;
+    
+}
+#tituloIzquierda{
+    flex-grow: 1;
+    width: 30%;
+}
+.main{
+    background-color:#997e67;
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    background-image: url("casa.jpg");
+    
+
+}
+#BarNav{
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#Categorias{
+    flex-grow: 1;
+    list-style: none;
+    width: 300px;
+}
+a{
+    size: 24px;
+}
+#Search{
+    flex-grow: 1;
+    text-align: right;
+    width: 5%;
+}
+.main h1{
+    text-align: center;
+    padding: 5px;
+    
+}
+#subcontents{
+    width: 20%;
+    height: 250px;
+    margin-left: 5%;
+    background-color: #e3cda1;
+    display: inline-block;
+    margin-top: 30px;
+    text-align: center;
+}
+#subcontents1{
+    width: 20%;
+    height: 250px;
+    margin-left:3%;
+    background-color: #e3cda1;
+    display: inline-block;
+    text-align: center;
+}
+#subcontents2{
+    width: 20%;
+    height: 250px;
+    margin-left: 3%;
+    background-color: #e3cda1;
+    display: inline-block;
+    text-align: center;
+}
+#subcontents3{
+    width: 20%;
+    height: 250px;
+    margin-left: 3%;
+    background-color: #e3cda1;
+    display: inline-block;
+    text-align: center;
+}
+.Comments{
+    width: 90%;
+    height: 400px;
+    margin-left: 5%;
+    background-color: #e3cda1;
+    margin-top: 10px;
+    display: flex;
+}
+#Text{
+    width: 50%;
+    height:400px ;
+}
+input{
+    width: 25%;
+    height: 7%;
+    display: inline-block;
+    margin-left: 40%;
+}
+#logocorreo{
+    display: flex;
+
+}
+#comentarios{
+    width: 50%;
+    height: 300px;
+    margin-left: 25%;
+    display: flex;
+    margin-top: 10px;
+    background-color: #e3cda1;
+    flex-grow: 1;
+    border: solid 2px black;
+}
+h4{
+    width: 50%;
+    height: 100px;
+    text-align: center;
+}
+.footer{
+    width: 100%;
+    background-color:#b0703b;
+    height: 200px;
+    display: flex;
+    margin-top: 10px;
+}
+.row{
+    height: 90%;
+    padding: 5px;
+    text-align: center;
+}
+#FooterIzquierda{
+    flex-grow: 1;
+    width: 30%;
+    margin-left: 50px;
+}
+#FooterDerecha{
+    flex-grow: 1;
+    width: 30%;
+    text-align: right;
+    margin-right: 50px;
+}
+#FooterCentro{
+    flex-grow: 1;
+    width: 30%;
+    text-align: center;
+}
+#Instagram{
+    width: 50%;
+    height: 60px;
+    display: flex;
+}
+#Facebook{
+    width: 50%;
+    height:60px ;
+    position: absolute;
+    top: 1075px;
+    display: flex;
+    left: 900px;
+
+}
+#Copyright{
+    width: 50%;
+    height: 60px;
+    position: absolute;
+    left: 430px;
+    top:1180px;
+}

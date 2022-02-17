@@ -36,6 +36,10 @@ public class CategoryServiceImpl implements CategoryServices{
 		}
 	}
 	
+	@Override
+	public List<Category> findAll(){
+		return cRepo.findAll();
+	}
 	
 
 }

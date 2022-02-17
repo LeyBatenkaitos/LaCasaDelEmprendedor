@@ -12,5 +12,7 @@ public interface CategoryServices {
 	List<Category> findAllCategoryNoProduct(Bussines bussines);
 
 	Category findCategory(Long id);
+	
+	List<Category> findAll();
 
 }
