@@ -12,4 +12,7 @@ public interface BussinesService {
 
 	Bussines findBussines(Long id);
 
+
+	List<Bussines> allBussines();
+
 }

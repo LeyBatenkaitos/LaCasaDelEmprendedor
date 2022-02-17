@@ -48,7 +48,7 @@ public class Category {
 			)
 	    private List<Bussines>bussines;
 	
-	public void setBussines(Bussines bussines) {
-        this.bussines.add(bussines);
+	public void setBussines(Bussines businesses) {
+        bussines.add(businesses);
     }
 }

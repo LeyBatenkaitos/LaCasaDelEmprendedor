@@ -17,6 +17,11 @@ public class BussinesServiceImpl implements BussinesService {
 	private BussinesRepository bRepo;
 	
 	@Override
+	public List<Bussines> allBussines(){
+		return bRepo.findAll();
+	}
+	
+	@Override
 	public Bussines createBussines(Bussines bussines) {
 		return bRepo.save(bussines);
 	}
