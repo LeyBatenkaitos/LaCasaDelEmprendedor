@@ -17,7 +17,12 @@ public class CategoryServiceImpl implements CategoryServices{
 	private CategoryRepository cRepo;
 	
 	@Override
-	public Category createProducto(Category category) {
+	public List<Category> allCategories(){
+		return cRepo.findAll();
+	}
+	
+	@Override
+	public Category createCategory(Category category) {
 		return cRepo.save(category);
 	}
 	
