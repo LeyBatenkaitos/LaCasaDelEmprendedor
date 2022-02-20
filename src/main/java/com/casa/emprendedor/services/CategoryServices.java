@@ -12,12 +12,9 @@ public interface CategoryServices {
 	Category findCategory(Long id);
 	
 	List<Category> findAll();
-<<<<<<< Updated upstream
-=======
 
 	List<Category> allCategories();
 
 	Category createCategory(Category category);
->>>>>>> Stashed changes
 
 }

@@ -4,14 +4,15 @@ body{
 .header{
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color:#219ebc;
+    background-color:#e3cda1;
     width: 90%;
     padding: 5px;
     display: flex;
     flex-flow: row wrap; 
-    height: 300px;
+    height: 100px;
     margin-left: 5%;
-    background-image: url("casa.jpg");
+    background-image: url("static/images/casa.jpg");
+
 
 }
 #logopagina{
@@ -22,13 +23,15 @@ body{
 }
 h1{
     text-align: center;
-    width: 900px;
+    width: 700px;
     background-color: #b0703b;
-    color: white;
     height: 50px;
-    margin-left: 300px;
-    border-radius: 10px;
-    
+    border-radius: 10px; 
+}
+
+.navBar{
+	
+	color:"#b0703b";
 }
 #tituloIzquierda{
     flex-grow: 1;
@@ -39,7 +42,7 @@ h1{
     width: 90%;
     height: 100%;
     margin-left: 5%;
-    background-image: url("casa.jpg");
+    background-image: url("images/casa.jpg");
     
 
 }
