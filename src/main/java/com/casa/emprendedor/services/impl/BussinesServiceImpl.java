@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.casa.emprendedor.models.Bussines;
-import com.casa.emprendedor.models.Category;
 import com.casa.emprendedor.repositories.BussinesRepository;
 import com.casa.emprendedor.services.BussinesService;
 
@@ -36,8 +35,7 @@ public class BussinesServiceImpl implements BussinesService {
 		}
 	}
 
-
-
+	
 
 
 }

@@ -15,4 +15,5 @@ public interface BussinesService {
 
 	List<Bussines> allBussines();
 
+
 }
