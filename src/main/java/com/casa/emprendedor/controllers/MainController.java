@@ -126,6 +126,16 @@ public class MainController {
 		return "adminPage";
 	}
 	
+	@GetMapping("/business/{name}")
+	public String search(@PathVariable("name")String name,Model model) {
+		
+		Bussines business = businessService.findByName(name);
+		
+		model.addAttribute("business",business);
+		
+		return "/dashboard";
+	}
+	
 	
 	
 }

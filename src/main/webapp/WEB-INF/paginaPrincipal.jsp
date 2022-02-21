@@ -48,8 +48,8 @@
 					</ul>
 				</div>
 				<div id="Search">
-					<form class="d-flex">
-						<input class="form-control me-2" type="search"
+					<form class="d-flex" method="GET" action="/business/">
+						<input class="form-control me-2" type="text"
 							placeholder="Buscar" aria-label="Buscar">
 						<button class="btn btn-outline-success" type="submit">Buscar</button>
 					</form>
