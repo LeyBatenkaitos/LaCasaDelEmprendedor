@@ -59,4 +59,8 @@ public class Bussines {
 			inverseJoinColumns = @JoinColumn(name = "categories_id")
 			)
 	    private List<Category>categories;	
+	
+	public void setCategory(Category category) {
+		categories.add(category);
+	}
 }

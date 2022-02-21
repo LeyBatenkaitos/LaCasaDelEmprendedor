@@ -7,17 +7,14 @@ import com.casa.emprendedor.models.Category;
 
 public interface CategoryServices {
 
-	List<Category> findAllCategoryNoProduct(Bussines bussines);
-
 	Category findCategory(Long id);
 	
 	List<Category> findAll();
-<<<<<<< Updated upstream
-=======
 
 	List<Category> allCategories();
 
 	Category createCategory(Category category);
->>>>>>> Stashed changes
+
+	List<Category> findAllCategoryNoBussines(Bussines bussines);
 
 }
