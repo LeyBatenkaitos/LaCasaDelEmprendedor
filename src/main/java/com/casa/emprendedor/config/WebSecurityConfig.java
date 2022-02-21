@@ -18,13 +18,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	UserDetailsService userDetailsService;
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
-		http
-		.csrf().disable()
-		  .httpBasic().and()
-		  .authorizeRequests()
-		    .antMatchers("**/**").permitAll().anyRequest().anonymous();
-
-                
+        http.
+        authorizeRequests()
+        .antMatchers("/css/**", "/js/**", "/registration").permitAll()
+        .antMatchers("/admin/**").access("hasRole('ADMIN')")
+        .anyRequest().authenticated()
+        .and()
+    .formLogin()
+        .loginPage("/login")
+        .permitAll()
+        .and()
+    .logout()
+        .permitAll();  
     }
 	
     @Bean

@@ -1,7 +1,10 @@
 package com.casa.emprendedor.controllers;
 
+
+import java.security.Principal;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +15,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.casa.emprendedor.models.Bussines;
 import com.casa.emprendedor.models.Category;
 import com.casa.emprendedor.models.Comment;
+import com.casa.emprendedor.models.User;
 import com.casa.emprendedor.services.BussinesService;
 import com.casa.emprendedor.services.CategoryServices;
 import com.casa.emprendedor.services.CommentService;
+import com.casa.emprendedor.services.UserService;
+import com.casa.emprendedor.validator.UserValidator;
 
 @Controller
 public class MainController {
@@ -31,6 +38,13 @@ public class MainController {
 	
 	@Autowired
 	private CategoryServices categoryService;
+	
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private UserValidator validator;
+	
 	//Mostrar página principal.
 	@GetMapping("/dashboard")
 	public String index(@ModelAttribute("comment")Comment comment,Model model) {
@@ -69,6 +83,49 @@ public class MainController {
 		return "paginaPrincipal";
 	} 
 	
+	@GetMapping("/registration")
+	public String registerForm(@ModelAttribute("user")User user) {
+		return "registrationPage";
+	}
 	
-
+	@PostMapping("/registration")
+	public String registration(@Valid @ModelAttribute("user")User user,
+			BindingResult result, Model model) {
+		validator.validate(user, result);
+		if(result.hasErrors()) {
+			return "redirect:/dashboard";
+		}
+		userService.saveUserWithAdminRole(user);
+		return "redirect:/login";
+	}
+	
+    @GetMapping(value = {"/", "/admin"})
+    public String home(Principal principal, Model model) {
+        String username = principal.getName();
+        model.addAttribute("currentUser", userService.findByUsername(username));
+        return "adminPage";
+    }
+	
+    @GetMapping("/login")
+    public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
+        if(error != null) {
+            model.addAttribute("errorMessage", "Invalid Credentials, Please try again.");
+        }
+        if(logout != null) {
+            model.addAttribute("logoutMessage", "Logout Successful!");
+        }
+        return "loginPage";
+    }
+    
+	
+	@GetMapping("/admin")
+	public String adminpage(Principal principal, @ModelAttribute("category")Category category,
+			@ModelAttribute("business")Bussines business, Model model) {
+        String username = principal.getName();
+        model.addAttribute("currentUser", userService.findByUsername(username));
+		return "adminPage";
+	}
+	
+	
+	
 }
