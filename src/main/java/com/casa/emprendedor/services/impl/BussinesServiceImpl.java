@@ -36,7 +36,7 @@ public class BussinesServiceImpl implements BussinesService {
 	}
 	
 	@Override
-	public Bussines findByName(String name){
+	public List<Bussines> findByName(String name){
 		   
 	      return bRepo.findByNameContaining(name);
 		}

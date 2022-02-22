@@ -56,14 +56,14 @@ public class MainController {
 		//Modelo a aplicar en la lista dropdown, muestra todas las categorías disponibles:
 		List<Category> categories = categoryService.findAll();
 		model.addAttribute("categories", categories);
-		return "paginaPrincipal";
+		return "dashboard";
 	}
 	
 	//Metodo para enviar y guardar comentario en la base de datos.
 	@PostMapping("/sendcomment")
 	public String postComment(@Valid @ModelAttribute("comment")Comment comment,BindingResult result) {
 		if(result.hasErrors()) {
-			return "paginaPrincipal";
+			return "dashboard";
 		}
 		commentService.createComment(comment);
 		return "redirect:/dashboard";
@@ -80,7 +80,7 @@ public class MainController {
 		model.addAttribute("categories", categories);
 		
 		model.addAttribute("businesses", businesess);
-		return "paginaPrincipal";
+		return "dashboard";
 	} 
 	
 	@GetMapping("/registration")
@@ -117,14 +117,14 @@ public class MainController {
         return "loginPage";
     }
 	
-	@GetMapping("/business/{name}")
-	public String search(@PathVariable("name")String name,Model model) {
+	@GetMapping("/business")
+	public String search(@RequestParam(value="name")String name,Model model) {
 		
-		Bussines business = businessService.findByName(name);
+		List<Bussines> business = businessService.findByName(name);
 		
-		model.addAttribute("business",business);
+		model.addAttribute("businesses",business);
 		
-		return "/dashboard";
+		return "dashboard";
 	}
 	
 	

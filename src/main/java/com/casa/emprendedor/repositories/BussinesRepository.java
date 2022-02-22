@@ -13,5 +13,7 @@ import com.casa.emprendedor.models.Category;
 public interface BussinesRepository extends JpaRepository<Bussines, Long>{
 	List<Bussines> findAll();
 	
-	Bussines findByNameContaining(String name);
+	List<Bussines> findByNameContaining(String name);
+		
 }
+
