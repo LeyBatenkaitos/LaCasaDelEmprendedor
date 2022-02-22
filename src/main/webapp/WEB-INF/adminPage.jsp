@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -20,7 +19,7 @@
     <a href="http://localhost:8080/dashboard">Pagina Principal</a>
     <a href="http://localhost:8080/bussines">Crear Negocio</a>
     <a href="http://localhost:8080/category">Crear Categoria</a>
-        <input type="submit" value="Cerrar sesi�n" />
+        <input type="submit" value="Cerrar sesiï¿½n" />
     	</form>
 	</span>
 	<h2>Registra un emprendimiento</h2>
@@ -37,14 +36,14 @@
 					<form:errors path="description"></form:errors>
 				</p>
 				<p>
-					<form:label path="linkwebpage"> Link a la p�gina web / red social :</form:label>
+					<form:label path="linkwebpage"> Link a la pï¿½gina web / red social :</form:label>
 					<form:input path="linkwebpage"/>
 					<form:errors path="linkwebpage"></form:errors>
 				</p>
 			
 					<form:button type="submit">Enviar</form:button>
 			</form:form>
-			<h1>A�ade una nueva categor�a</h1>
+			<h1>Aï¿½ade una nueva categorï¿½a</h1>
 			<form:form action="/newcategory" method="post" modelAttribute="category">
 			<form:label path="name"> Nombre:</form:label>
 			<form:input path="name"/>
@@ -69,11 +68,11 @@
     	        <form:input path="username"/>
     	    </p>
     	    <p>
-    	        <form:label path="password">Contrase�a:</form:label>
+    	        <form:label path="password">Contraseï¿½a:</form:label>
    	            <form:password path="password"/>
       		</p>
         	<p>
-            	<form:label path="passwordConfirmation">Confirme contrase�a:</form:label>
+            	<form:label path="passwordConfirmation">Confirme contraseï¿½a:</form:label>
             	<form:password path="passwordConfirmation"/>
         	</p>
         	<input type="submit" value="Registrar"/>
