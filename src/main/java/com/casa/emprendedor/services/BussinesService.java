@@ -16,4 +16,7 @@ public interface BussinesService {
 	List<Bussines> allBussines();
 
 
+	Bussines findByName(String name);
+
+
 }

@@ -116,14 +116,15 @@ public class MainController {
         }
         return "loginPage";
     }
-    
 	
-	@GetMapping("/admin")
-	public String adminpage(Principal principal, @ModelAttribute("category")Category category,
-			@ModelAttribute("business")Bussines business, Model model) {
-        String username = principal.getName();
-        model.addAttribute("currentUser", userService.findByUsername(username));
-		return "adminPage";
+	@GetMapping("/business/{name}")
+	public String search(@PathVariable("name")String name,Model model) {
+		
+		Bussines business = businessService.findByName(name);
+		
+		model.addAttribute("business",business);
+		
+		return "/dashboard";
 	}
 	
 	
