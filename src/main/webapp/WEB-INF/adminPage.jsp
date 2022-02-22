@@ -14,5 +14,8 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="submit" value="Logout!" />
     </form>
+    <a href="http://localhost:8080/dashboard">Pagina Principal</a>
+    <a href="http://localhost:8080/bussines">Crear Negocio</a>
+    <a href="http://localhost:8080/category">Crear Categoria</a>
 </body>
 </html>
