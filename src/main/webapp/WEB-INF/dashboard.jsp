@@ -48,6 +48,13 @@
 					</ul>
 				</div>
 				<div id="Search">
+				<a href="/admin">Iniciar sesión</a>
+				<span>
+				<form id="logoutForm" method="POST" action="/logout">
+        		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+       			<input type="submit" value="Cerrar sesión" />
+    			</form>
+				</span>	
 					<form class="d-flex" method="GET" action="/dashboard/business/">
 						<input name="name" class="form-control me-2" type="text"
 							placeholder="Buscar" aria-label="Buscar">

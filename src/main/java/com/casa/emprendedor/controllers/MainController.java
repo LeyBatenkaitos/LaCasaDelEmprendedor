@@ -107,6 +107,7 @@ public class MainController {
         }
         if(logout != null) {
             model.addAttribute("logoutMessage", "Cierre de sesión exitoso.");
+            return "redirect:/dashboard";
         }
         return "loginPage";
     }
@@ -119,6 +120,16 @@ public class MainController {
 		return "dashboard";
 	}
 	
-	
+	@GetMapping("/admin")
+	public String adminHome(Principal principal, Model model,
+			@ModelAttribute("user")User user,
+			@ModelAttribute("category")Category category,
+			@ModelAttribute("bussines")Bussines bussines) {
+		
+		String username = principal.getName();
+		User actualUser = userService.findByUsername(username);
+		model.addAttribute("actualUser", actualUser);
+		return "adminPage";
+	}
 	
 }
