@@ -46,7 +46,7 @@ public class MainController {
 	private UserValidator validator;
 	
 	//Mostrar página principal.
-	@GetMapping("/dashboard")
+	@GetMapping(value ={"/dashboard", "/"})
 	public String index(@ModelAttribute("comment")Comment comment,Model model) {
 		
 		//Modelo para mostrar todos los negocios:
@@ -74,12 +74,12 @@ public class MainController {
 	public String getBusinessesByCategories(@PathVariable("id")Long id,Model model) {
 		//Encontrar categoria por id y luego conseguir todos los negocios que pertenecen a esa categoría.
 		Category category = categoryService.findCategory(id);
-		List<Bussines> businesess = category.getBussines();
+		List<Bussines> businesses = category.getBussines();
+		model.addAttribute("businesses",businesses);
 		
 		List<Category> categories = categoryService.findAll();
 		model.addAttribute("categories", categories);
 		
-		model.addAttribute("businesses", businesess);
 		return "dashboard";
 	} 
 	
@@ -99,12 +99,6 @@ public class MainController {
 		return "redirect:/login";
 	}
 	
-    @GetMapping(value = {"/", "/admin"})
-    public String home(Principal principal, Model model) {
-        String username = principal.getName();
-        model.addAttribute("currentUser", userService.findByUsername(username));
-        return "adminPage";
-    }
 	
     @GetMapping("/login")
     public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
@@ -120,8 +114,8 @@ public class MainController {
 	@GetMapping("/dashboard/business/")
 	public String search(@RequestParam(value="name")String name,Model model) {
 		
-		List<Bussines> business = businessService.findByName(name);
-		model.addAttribute("businesses",business);
+		List<Bussines> businesses = businessService.findByName(name);
+		model.addAttribute("businesses",businesses);
 		return "dashboard";
 	}
 	
