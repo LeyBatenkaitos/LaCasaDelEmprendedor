@@ -48,7 +48,7 @@
 					</ul>
 				</div>
 				<div id="Search">
-					<form class="d-flex" method="GET" action="/business/">
+					<form class="d-flex" method="GET" action="/dashboard/business/">
 						<input name="name" class="form-control me-2" type="text"
 							placeholder="Buscar" aria-label="Buscar">
 						<button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -63,7 +63,7 @@
 				</h2>
 			</div>
 		</c:forEach>
-
+	
 		<h1><c:out value="${business.name}"></c:out></h1>
 		<div class="Comments">
 			<div id="Text">

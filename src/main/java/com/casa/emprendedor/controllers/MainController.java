@@ -109,21 +109,19 @@ public class MainController {
     @GetMapping("/login")
     public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
         if(error != null) {
-            model.addAttribute("errorMessage", "Invalid Credentials, Please try again.");
+            model.addAttribute("errorMessage", "Credenciales inválidas, vuelva a ingresarlas.");
         }
         if(logout != null) {
-            model.addAttribute("logoutMessage", "Logout Successful!");
+            model.addAttribute("logoutMessage", "Cierre de sesión exitoso.");
         }
         return "loginPage";
     }
-	
-	@GetMapping("/business")
+				    			
+	@GetMapping("/dashboard/business/")
 	public String search(@RequestParam(value="name")String name,Model model) {
 		
 		List<Bussines> business = businessService.findByName(name);
-		
 		model.addAttribute("businesses",business);
-		
 		return "dashboard";
 	}
 	
