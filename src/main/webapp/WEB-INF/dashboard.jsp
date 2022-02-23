@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,14 +46,18 @@
 								</c:forEach>
 							</ul>
 						</li>
-						<li>
-							<a href="/informacion">Seccion Informativa</a>
-						</li>
 					</ul>
 				</div>
 				<div id="Search">
-					<form class="d-flex" method="GET" action="/business/">
-						<input class="form-control me-2" type="text"
+				<a href="/admin">Iniciar sesión</a>
+				<span>
+				<form id="logoutForm" method="POST" action="/logout">
+        		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+       			<input type="submit" value="Cerrar sesión" />
+    			</form>
+				</span>	
+					<form class="d-flex" method="GET" action="/dashboard/business/">
+						<input name="name" class="form-control me-2" type="text"
 							placeholder="Buscar" aria-label="Buscar">
 						<button class="btn btn-outline-success" type="submit">Buscar</button>
 					</form>
@@ -66,14 +71,17 @@
 				</h2>
 			</div>
 		</c:forEach>
-
-
+	
+		<h1><c:out value="${business.name}"></c:out></h1>
 		<div class="Comments">
 			<div id="Text">
 				<h4>Nos interesa tu opinion :</h4>
-				<textarea name="comments" id="comments" cols="25" rows="5">
-                       	</textarea>
-				<input type="submit" formmethod="post" value="/sendcomment">
+			<form:form action="/sendcomment" method="post" modelAttribute="comment">
+				<form:label path="content"></form:label>
+			<form:input type="text" path="content"/>
+			<form:errors path="content"></form:errors>	
+			<form:button type="submit">Create</form:button>
+			</form:form>
 			</div>
 		</div>
 

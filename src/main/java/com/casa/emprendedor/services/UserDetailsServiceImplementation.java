@@ -13,17 +13,20 @@ import org.springframework.stereotype.Service;
 
 import com.casa.emprendedor.models.Role;
 import com.casa.emprendedor.models.User;
-import com.casa.emprendedor.services.impl.UserServiceImpl;
+import com.casa.emprendedor.repositories.UserRepository;
 
 @Service
 public class UserDetailsServiceImplementation implements UserDetailsService {
     
 	@Autowired
-	UserServiceImpl userServiceImpl;
+	UserService userService;
+	@Autowired
+	UserRepository userRepository;
 	
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userServiceImpl.findByUsername(username);
+        User user = userRepository.findByUsername(username);
+        
         if(user == null) {
             throw new UsernameNotFoundException("User not found");
         }

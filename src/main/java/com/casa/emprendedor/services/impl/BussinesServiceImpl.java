@@ -34,8 +34,12 @@ public class BussinesServiceImpl implements BussinesService {
 			return null;
 		}
 	}
-
 	
+	@Override
+	public List<Bussines> findByName(String name){
+		   
+	      return bRepo.findByNameContaining(name);
+		}
 
 
 }

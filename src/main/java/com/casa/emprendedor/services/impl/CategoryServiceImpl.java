@@ -27,7 +27,7 @@ public class CategoryServiceImpl implements CategoryServices{
 	}
 	
 	@Override 
-	public List<Category> findAllCategoryNoProduct(Bussines bussines){
+	public List<Category> findAllCategoryNoBussines(Bussines bussines){
 		return cRepo.findByBussinesNotContains(bussines);	
 	}
 	

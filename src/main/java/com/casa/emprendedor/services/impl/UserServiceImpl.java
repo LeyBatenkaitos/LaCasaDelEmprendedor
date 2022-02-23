@@ -23,15 +23,6 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	@Override
-	public User findByEmail(String email) {
-        Optional<User> optionalUser = userRepo.findByEmail(email);
-        if(optionalUser.isPresent()) {
-            return optionalUser.get();
-        } else {
-            return null;
-        }
-    }
 		
 	@Override
     public User saveWithUserRole(User user) {
@@ -46,12 +37,12 @@ public class UserServiceImpl implements UserService{
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setRole(roleRepository.findByName("ROLE_ADMIN"));
         userRepo.save(user);
-    }    
-    
-    @Override
-    public User findByUsername(String username) {
-        return userRepo.findByUsername(username);
     }
-	
+
+	@Override
+	public User findByUsername(String username) {
+		return userRepo.findByUsername(username);
+	}    
+    
 
 }

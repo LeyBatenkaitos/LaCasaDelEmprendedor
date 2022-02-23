@@ -1,15 +1,18 @@
 body{
-    width: 100%;
+    width: 85%;
+    
+    
+    
 }
 .header{
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color:#219ebc;
+    background-color:#e4f2ff;
     width: 90%;
     padding: 5px;
     display: flex;
     flex-flow: row wrap; 
-    height: 300px;
+    height: 100px;
     margin-left: 5%;
     background-image: url("casa.jpg");
 
@@ -18,15 +21,16 @@ body{
     width: 40%;
     height: 35%;
     margin-left: 50px;
-    background-color: #219ebc;
+    background-color: #b8e5fc;
 }
 h1{
     text-align: center;
-    width: 900px;
-    background-color: #b0703b;
-    color: white;
+    font-family: Baskerville Old Face;
+    width: 90%;
+    background-color: #b8e5fc;
+    color: black;
     height: 50px;
-    margin-left: 300px;
+    margin-left: 50px;
     border-radius: 10px;
     
 }
@@ -35,7 +39,7 @@ h1{
     width: 30%;
 }
 .main{
-    background-color:#997e67;
+    background-color:#e4f2ff;
     width: 90%;
     height: 100%;
     margin-left: 5%;
@@ -70,49 +74,27 @@ a{
     
 }
 #subcontents{
-    width: 20%;
-    height: 250px;
-    margin-left: 5%;
-    background-color: #e3cda1;
+    width: 200px;
+    height: 200px;
+    margin-left: 4%;
+    background-color: #b8e5fc;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
-}
-#subcontents1{
-    width: 20%;
-    height: 250px;
-    margin-left:3%;
-    background-color: #e3cda1;
-    display: inline-block;
-    text-align: center;
-}
-#subcontents2{
-    width: 20%;
-    height: 250px;
-    margin-left: 3%;
-    background-color: #e3cda1;
-    display: inline-block;
-    text-align: center;
-}
-#subcontents3{
-    width: 20%;
-    height: 250px;
-    margin-left: 3%;
-    background-color: #e3cda1;
-    display: inline-block;
-    text-align: center;
+    font-family: Vivaldi;
 }
 .Comments{
     width: 90%;
-    height: 400px;
+    height: 250px;
     margin-left: 5%;
-    background-color: #e3cda1;
+    margin-right: 5%;
+    background-color: #b8e5fc;
     margin-top: 10px;
     display: flex;
 }
 #Text{
     width: 50%;
-    height:400px ;
+    height:300px ;
 }
 input{
     width: 25%;
@@ -130,7 +112,7 @@ input{
     margin-left: 25%;
     display: flex;
     margin-top: 10px;
-    background-color: #e3cda1;
+    background-color: #b8e5fc;
     flex-grow: 1;
     border: solid 2px black;
 }
@@ -141,7 +123,7 @@ h4{
 }
 .footer{
     width: 100%;
-    background-color:#b0703b;
+    background-color:#b8e5fc;
     height: 200px;
     display: flex;
     margin-top: 10px;

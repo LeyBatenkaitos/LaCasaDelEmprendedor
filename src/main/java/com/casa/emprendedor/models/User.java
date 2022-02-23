@@ -31,20 +31,18 @@ import lombok.Setter;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;
-	@NotNull
+	
+	@NotNull(message="Este campo es obligatorio")
 	private String firstName;
-	@NotNull
+	
+	@NotNull(message="Este campo es obligatorio")
 	private String lastName;
 	
-	@Column(nullable = false)
+	@Email(message="Debe ingresar un correo electronico válido.")
 	private String username;
 	
-	@Email(message="Debe ingresar un correo electronico valido")
-	private String email;
-	@NotNull
 	@Size(min = 5, message = "Su contraseña debe tener un mínimo de 5 caracteres")
 	private String password;
 	
@@ -60,7 +58,8 @@ public class User {
 	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
 	private List<Bussines> bussines;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "role_id")
 	private Role role;
 }
+
