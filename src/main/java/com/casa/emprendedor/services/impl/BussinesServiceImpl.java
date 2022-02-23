@@ -22,7 +22,7 @@ public class BussinesServiceImpl implements BussinesService {
 	
 	@Override
 	public Bussines createBussines(Bussines bussines) {
-		return bRepo.save(bussines);
+		return bRepo.saveAndFlush(bussines);
 	}
 	
 	@Override
