@@ -23,15 +23,17 @@
 <title>La Casa Del Emprendedor</title>
 </head>
 <body>
-	<div class="publicidad"></div>
+
+		<div class="publicidad"></div>
+	<div class="container">
 	<header>
-		<a href="/login">Iniciar sesión</a>
 		<h1>La Casa Del Emprendedor</h1>		
 	</header>
 
 	<div class="main">
 		<nav class="navbar navbar-light" style="background-color: #b8e5fc;">
 			<div id="BarNav">
+			
 				<div id="Categorias">
 					<ul>
 						<li class="nav-item dropdown" style="list-style-type: none;">
@@ -48,7 +50,8 @@
 								</c:forEach>
 							</ul>
 						</li>
-						<li><a href="/information">Zona Informativa</a></li>
+						<a href="/admin">Iniciar sesión</a>
+						<li style="list-style-type: none;"><a href="/information">Zona Informativa</a></li>
 					</ul>
 				</div>
 				<div id="Search">				
@@ -67,17 +70,19 @@
 				</h2>
 			</div>
 		</c:forEach>
-	
 		<h1><c:out value="${business.name}"></c:out></h1>
 		 <div class="Comments">
 			<div id="Text">
 				<h4>Nos interesa tu opinion :</h4>
 			<form:form action="/sendcomment" method="post" modelAttribute="comment">
 				<form:label path="content"></form:label>
-			<form:input type="text" path="content"/>
+			<form:textarea rows="5" cols="70" type="text " path="content" style="background-color: #b8e5fc;"/>
 			<form:errors path="content"></form:errors>	
-			<form:button type="submit">Create</form:button>
+			<br>
+			<form:button class="btn btn-outline-success" type="submit">Enviar</form:button>
+			
 			</form:form>
+			
 			</div>
 		</div> 
 
@@ -107,10 +112,10 @@
 			</div>
 			<div id="FooterDerecha">
 				<h5>Metodos de pago</h5>
-				<img src="logowebpay.png" height="150px" width="200px" />
-
+				
 			</div>
 		</div>
+	</div>
 	</div>
 	<div class="publicidad"></div>
 </body>
