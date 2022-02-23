@@ -17,7 +17,7 @@
 	</div>
 	<h2>HOLA ADMIN <c:out value="${currentUser.firstName}"></c:out></h2>
 	<span>
-	    <form id="logoutForm" method="POST" action="/logout">
+	    	    <form id="logoutForm" method="POST" action="/logout">
 		    <a href="/dashboard">Pagina Principal</a>
 		    <a href="/bussines">Crear Negocio</a>
 		    <a href="/category">Crear Categoria</a>
@@ -29,25 +29,25 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="well well-sm">
-					<form class="form-horizontal" method="post">
+						<form:form action="/newbussines" method="post" modelAttribute="bussines" class="form-horizontal">
 						<fieldset>
 							<legend class="text-center header-regis">Registra un emprendimiento</legend>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+									<form:input path="name" id="fname" name="name" type="text" placeholder="Nombre" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
 								<div class="col-md-8">
-									<textarea class="form-control" id="message" name="message" placeholder="Descripción" rows="7"></textarea>
+									<form:input path="description" class="form-control" id="message" name="message" placeholder="Descripción" rows="7"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="email" name="email" type="text" placeholder="Link a la página web / red social" class="form-control">
+									<form:input path="linkwebpage" id="email" name="email" type="text" placeholder="Link a la página web / red social" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -56,7 +56,7 @@
 								</div>
 							</div>
 						</fieldset>
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>
@@ -65,13 +65,13 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="well well-sm">
-					<form class="form-horizontal" method="post">
+					<form:form class="form-horizontal" action="/newcategory" method="post" modelAttribute="category">
 						<fieldset>
 							<legend class="text-center header-regis">Añade una nueva categoría</legend>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+									<form:input path="name" id="fname" name="name" type="text" placeholder="Nombre" class="form-control"/>
 								</div>
 							</div>	
 							<div class="form-group">
@@ -80,7 +80,7 @@
 								</div>
 							</div>
 						</fieldset>
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>
@@ -89,37 +89,37 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="well well-sm">
-					<form class="form-horizontal" method="post">
+					<form:form class="form-horizontal" method="post" action="/registration" modelAttribute="user">
 						<fieldset>
 							<legend class="text-center header-register">Registra un usuario</legend>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+									<form:input path="firstName" id="fname" name="name" type="text" placeholder="Nombre" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="lname" name="name" type="text" placeholder="Apellido" class="form-control">
+									<form:input path="lastName" id="lname" name="name" type="text" placeholder="Apellido" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+									<<form:input path="username" id="email" name="email" type="text" placeholder="Email Address" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="password" name="password" type="password" placeholder="Contraseña" class="form-control">
+									<form:input path="password" id="password" name="password" type="password" placeholder="Contraseña" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
 								<div class="col-md-8">
-									<input id="password" name="password" type="password" placeholder="Confirme contraseña" class="form-control">
+									<form:input path="passwordConfirmation" id="password" name="password" type="password" placeholder="Confirme contraseña" class="form-control"/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -128,7 +128,7 @@
 								</div>
 							</div>
 						</fieldset>
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>

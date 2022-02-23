@@ -29,7 +29,7 @@ public class CategoryController {
 			return"/category";
 		}else {
 			cService.createCategory(category);
-			return "redirect:/category";
+			return "redirect:/admin";
 		}
 		
 	}

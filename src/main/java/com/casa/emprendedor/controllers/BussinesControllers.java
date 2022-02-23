@@ -39,7 +39,7 @@ public class BussinesControllers {
 			return "/bussines";
 		}else {
 			bService.createBussines(bussines);
-			return "redirect:/bussines";
+			return "redirect:/admin";
 		}
 	}
 		

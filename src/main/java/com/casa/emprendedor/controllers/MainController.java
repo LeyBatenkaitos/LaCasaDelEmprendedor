@@ -4,7 +4,6 @@ package com.casa.emprendedor.controllers;
 import java.security.Principal;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,7 +96,7 @@ public class MainController {
 			return "redirect:/dashboard";
 		}
 		userService.saveUserWithAdminRole(user);
-		return "redirect:/login";
+		return "redirect:/admin";
 	}
 	
 	
