@@ -1,0 +1,154 @@
+body{
+    background-color: #e3cda1;
+}
+.header-regis {
+    color: black;
+    font-size: 29px;
+    padding: 10px;
+    margin-left: 550px;
+    font-family: "Montserrat", sans-serif;
+}
+h1{
+    text-align: center;
+    font-family: Baskerville Old Face;
+    width: 99%;
+    background-color: #997e67;
+    color: black;
+    height: 70px;
+    margin-left: 4px;
+    border-radius: 10px;
+    font-size: 50px;
+    margin-top: 15px;
+}
+#logo{
+    margin-left: 100px;
+    margin-top: -102px;
+    display: flex;  
+}
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+.header-register{
+    color: black;
+    font-size: 29px;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+    margin-left: 570px;
+}
+h2{
+    margin-left: 40px;
+    font-size: 30px;
+}
+.btn-lg{
+    background-color: #997e67;
+    margin-left: 706px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 5px;
+    padding: 5px;
+}
+.anotation{
+    display: flex;
+    margin-left: 197px;
+}
+#fname{
+    margin-left: 560px;
+    width: 327px;
+}
+#message{
+    margin-left: 560px;
+    margin-top: 10px;
+    width: 327px;
+}
+#email{
+    margin-left: 560px;
+    margin-top: 10px;
+    width: 327px;
+}
+.form-control{
+    font-style: normal;
+}
+.form-group{
+    font-size: 2px;
+}
+.container{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#lname{
+    margin-left: 560px;
+    width: 327px;
+    margin-top: 10px;
+}
+#password{
+    margin-left: 560px;
+    width: 327px;
+    margin-top: 10px;
+}
+.index{
+    margin-left: 1057px;
+}
+a{
+    margin-left: 7px;
+}
+.ind{
+    margin-right: 16px;
+}
+.footer{
+    height: 145px;
+    display: flex;
+    background-color: #997e67;
+    margin-top: 126px;
+    width: 1518px;
+    margin-left: -8px;
+}
+.Contac, .Rsocial, .Pago{
+    width: 30%;
+    height: 120px;
+    padding: 15px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 110px;
+}
+.Rsocial{
+    padding: 50px 0px 0px 5px;
+    height: 100px;
+    width: 370px;
+    margin-left: 40px;
+}
+.contacto{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.logo-redsocial{
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+}
+.text-social{
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    font-size: 12px;
+    
+}
+.copyright{
+    width: 10px;
+    height: 10px;
+    
+}
+h6{
+    font-size: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: white;
+}
+.fono{
+    margin-left: -3px;
+    margin-top: 10px;
+}
