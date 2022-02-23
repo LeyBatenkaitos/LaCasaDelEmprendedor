@@ -22,9 +22,10 @@
 <title>La Casa Del Emprendedor</title>
 </head>
 <body background="casa.jpg">
-	<div class="header">
+	<div class="publicidad"></div>
+	<header>
 		<h1>La Casa Del Emprendedor</h1>
-	</div>
+	</header>
 
 	<div class="main">
 		<nav class="navbar navbar-light" style="background-color: #b8e5fc;">
@@ -108,6 +109,6 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="publicidad"></div>
 </body>
 </html>
