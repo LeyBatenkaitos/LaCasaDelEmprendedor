@@ -71,7 +71,7 @@ public class MainController {
 	
 	//Mostrar negocios en base a la categoría seleccionada.
 	@GetMapping("/dashboard/{id}")
-	public String getBusinessesByCategories(@PathVariable("id")Long id,Model model) {
+	public String getBusinessesByCategories(@PathVariable("id")Long id,Model model,@ModelAttribute("comment")Comment comment) {
 		//Encontrar categoria por id y luego conseguir todos los negocios que pertenecen a esa categoría.
 		Category category = categoryService.findCategory(id);
 		List<Bussines> businesses = category.getBussines();
@@ -90,7 +90,8 @@ public class MainController {
 	
 	@PostMapping("/registration")
 	public String registration(@Valid @ModelAttribute("user")User user,
-			BindingResult result, Model model) {
+			BindingResult result, Model model,
+			@ModelAttribute("comment")Comment comment) {
 		validator.validate(user, result);
 		if(result.hasErrors()) {
 			return "redirect:/dashboard";
@@ -101,7 +102,9 @@ public class MainController {
 	
 	
     @GetMapping("/login")
-    public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
+    public String login(@RequestParam(value="error", required=false) String error,
+    		@RequestParam(value="logout", required=false) String logout, 
+    		Model model,@ModelAttribute("comment")Comment comment) {
         if(error != null) {
             model.addAttribute("errorMessage", "Credenciales inválidas, vuelva a ingresarlas.");
         }
@@ -113,7 +116,7 @@ public class MainController {
     }
 				    			
 	@GetMapping("/dashboard/business/")
-	public String search(@RequestParam(value="name")String name,Model model) {
+	public String search(@RequestParam(value="name")String name,Model model,@ModelAttribute("comment")Comment comment) {
 		
 		List<Bussines> businesses = businessService.findByName(name);
 		model.addAttribute("businesses",businesses);
