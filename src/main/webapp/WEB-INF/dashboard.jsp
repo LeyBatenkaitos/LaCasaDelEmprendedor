@@ -50,7 +50,7 @@
 								</c:forEach>
 							</ul>
 						</li>
-						<a href="/admin">Iniciar sesión</a>
+						<a href="/login">Iniciar sesión</a>
 						<li style="list-style-type: none;"><a href="/information">Zona Informativa</a></li>
 					</ul>
 				</div>
