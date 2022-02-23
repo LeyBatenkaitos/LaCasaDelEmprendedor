@@ -20,11 +20,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         http.
         csrf().disable()
         .authorizeRequests()
-        .antMatchers("/css/**", "/js/**", "/dashboard/**", "/","/static**","/bussines/**","/bussines","/registration/**","/sendcomment/**").permitAll()
+        .antMatchers("/css/**", "/js/**", "/dashboard/**", "/","/static**","/bussines/**","/bussines","/sendcomment/**").permitAll()
         .antMatchers("/admin/**","/category/**").access("hasRole('ADMIN')")
         .anyRequest().authenticated()
         .and()
     .formLogin()
+    	.defaultSuccessUrl("/admin", true)
         .loginPage("/login")
         .permitAll()
         .and()

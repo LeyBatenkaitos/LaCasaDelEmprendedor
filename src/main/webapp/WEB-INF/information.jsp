@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/css/information.css">
+<link rel="stylesheet" href="/css/information.css">
 <title>Infomacion</title>
 </head>
-<body background="casa.png" style="overflow: hidden;">
+<body background="casa.png">
 <div class="publicidad"></div>
         <div id="container">
             <header>
+                <img id="logo" src="logo.png" alt="Logo">
                 <center>
-                    <img id="logo" src="logo.png" alt="Logo">
                     <h1 >La Casa Del Emprendedor</h1>
-                </center>
+                </center>      
             </header>
             <main>
                 <div class="box">
@@ -61,7 +61,7 @@
                     
                 </div>
                 <div class="box">
-                    <h2 class="titulo">Potencia tu Emprendimiento</h2>
+                    <h2 class="titulo1">Potencia tu Emprendimiento</h2>
                     <ul>
                         <li><a class="info" href="http://convocatoria.3ie.cl/venturecapital/">Startup Academy Ventur Oficial</a></li>
                         <li><a class="info" href="https://www.corfo.cl/sites/cpp/convocatorias/movil/semilla_expande_emprendimientos_liderados_por_mujeres">Semilla Expande Para Empresas Lideradas por Mujeres</a></li>
@@ -100,7 +100,7 @@
 
                 </div>
                 <div class="Pago" style="width: 256px;">
-                    <h3>Método de Pago</h3>
+                    <h3 class="final">Método de Pago</h3>
                 </div>
             </footer>
         </div>
