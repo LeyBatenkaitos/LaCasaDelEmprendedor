@@ -25,7 +25,7 @@
 <body>
 	<div class="publicidad"></div>
 	<header>
-		<a href="/admin">Iniciar sesión</a>
+		<a href="/login">Iniciar sesión</a>
 		<h1>La Casa Del Emprendedor</h1>		
 	</header>
 
