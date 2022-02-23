@@ -1,21 +1,22 @@
 body{
     width: 85%;
-    display: inline-block;
-    background-color:#e4f2ff;
+    
+    
+    
 }
-header{
+.header{
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color:#e4f2ff;
     width: 90%;
-    display: inline-block;
+    padding: 5px;
+    display: flex;
     flex-flow: row wrap; 
     height: 100px;
-    margin-left: 150px;
-    vertical-align: top;
+    margin-left: 5%;
+    background-image: url("casa.jpg");
 
 }
-
 #logopagina{
     width: 40%;
     height: 35%;
@@ -38,11 +39,10 @@ h1{
     width: 30%;
 }
 .main{
-	vertical-align: top;
-	margin-left: 150px;
     background-color:#e4f2ff;
     width: 90%;
     height: 100%;
+    margin-left: 5%;
     background-image: url("casa.jpg");
     
 

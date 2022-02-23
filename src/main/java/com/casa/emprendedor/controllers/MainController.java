@@ -71,7 +71,7 @@ public class MainController {
 	
 	//Mostrar negocios en base a la categoría seleccionada.
 	@GetMapping("/dashboard/{id}")
-	public String getBusinessesByCategories(@PathVariable("id")Long id,Model model,@ModelAttribute("comment")Comment comment) {
+	public String getBusinessesByCategories(@PathVariable("id")Long id,Model model) {
 		//Encontrar categoria por id y luego conseguir todos los negocios que pertenecen a esa categoría.
 		Category category = categoryService.findCategory(id);
 		List<Bussines> businesses = category.getBussines();
@@ -90,8 +90,7 @@ public class MainController {
 	
 	@PostMapping("/registration")
 	public String registration(@Valid @ModelAttribute("user")User user,
-			BindingResult result, Model model,
-			@ModelAttribute("comment")Comment comment) {
+			BindingResult result, Model model) {
 		validator.validate(user, result);
 		if(result.hasErrors()) {
 			return "redirect:/dashboard";
@@ -102,9 +101,7 @@ public class MainController {
 	
 	
     @GetMapping("/login")
-    public String login(@RequestParam(value="error", required=false) String error,
-    		@RequestParam(value="logout", required=false) String logout, 
-    		Model model,@ModelAttribute("comment")Comment comment) {
+    public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
         if(error != null) {
             model.addAttribute("errorMessage", "Credenciales inválidas, vuelva a ingresarlas.");
         }
@@ -116,7 +113,7 @@ public class MainController {
     }
 				    			
 	@GetMapping("/dashboard/business/")
-	public String search(@RequestParam(value="name")String name,Model model,@ModelAttribute("comment")Comment comment) {
+	public String search(@RequestParam(value="name")String name,Model model) {
 		
 		List<Bussines> businesses = businessService.findByName(name);
 		model.addAttribute("businesses",businesses);
@@ -133,11 +130,6 @@ public class MainController {
 		User actualUser = userService.findByUsername(username);
 		model.addAttribute("actualUser", actualUser);
 		return "adminPage";
-	}
-	
-	@GetMapping("/information")
-	public String information() {
-		return "information";
 	}
 	
 }

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +21,10 @@
 <link rel="stylesheet" href="/css/pruebasproyectovscode-1.css">
 <title>La Casa Del Emprendedor</title>
 </head>
-<body>
-	<div class="publicidad"></div>
-	<header>
-		<a href="/admin">Iniciar sesión</a>
-		<h1>La Casa Del Emprendedor</h1>		
-	</header>
+<body background="casa.jpg">
+	<div class="header">
+		<h1>La Casa Del Emprendedor</h1>
+	</div>
 
 	<div class="main">
 		<nav class="navbar navbar-light" style="background-color: #b8e5fc;">
@@ -48,10 +45,16 @@
 								</c:forEach>
 							</ul>
 						</li>
-						<li><a href="/information">Zona Informativa</a></li>
 					</ul>
 				</div>
-				<div id="Search">				
+				<div id="Search">
+				<a href="/admin">Iniciar sesión</a>
+				<span>
+				<form id="logoutForm" method="POST" action="/logout">
+        		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+       			<input type="submit" value="Cerrar sesión" />
+    			</form>
+				</span>	
 					<form class="d-flex" method="GET" action="/dashboard/business/">
 						<input name="name" class="form-control me-2" type="text"
 							placeholder="Buscar" aria-label="Buscar">
@@ -69,17 +72,14 @@
 		</c:forEach>
 	
 		<h1><c:out value="${business.name}"></c:out></h1>
-		 <div class="Comments">
+		<div class="Comments">
 			<div id="Text">
 				<h4>Nos interesa tu opinion :</h4>
-			<form:form action="/sendcomment" method="post" modelAttribute="comment">
-				<form:label path="content"></form:label>
-			<form:input type="text" path="content"/>
-			<form:errors path="content"></form:errors>	
-			<form:button type="submit">Create</form:button>
-			</form:form>
+				<textarea name="comments" id="comments" cols="25" rows="5">
+                       	</textarea>
+				<input type="submit" formmethod="post" value="/sendcomment">
 			</div>
-		</div> 
+		</div>
 
 
 		<div class="footer">
@@ -112,6 +112,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="publicidad"></div>
+
 </body>
 </html>
