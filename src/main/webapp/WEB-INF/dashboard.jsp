@@ -24,7 +24,7 @@
 </head>
 <body>
 	<div class="publicidad">
-	<img src="anuncio.jpg" height="900px" width="175px" />
+	<img src="/images/anuncio.jpg" height="900px" width="175px" />
 	</div>
 	<div class="container">
 	<a id="inicio" class="btn btn-sm btn-primary" href="/login">Iniciar sesión</a>
@@ -38,9 +38,10 @@
 			
 				<div id="Categorias">
 					<ul>
-						<li id="botoninfo" style="list-style-type: none;"><a href="/information" class="btn btn-primary btn-sm disabled">Zona Informativa</a>
-						</li>					
-						<li class="nav-item dropdown" style="list-style-type: none;">
+						<li id="botoninfo" style="list-style-type: none;" ><a class="btn btn-primary btn-sm activated" href="/information">Zona Informativa</a>
+						</li>
+						<li style="list-style-type: none;" id="botoninfo"><a href="/dashboard" class="btn btn-primary btn-sm activated">Página principal</a></li>					
+						<li class="nav-item dropdown" style="list-style-type: none; display: inline-block;">
 							<a class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Categorias </a>
@@ -70,10 +71,13 @@
 				<h5>
 					<c:out value="${business.name}" />
 				</h5>
-					<img alt="<c:out value="${business.image}"/>" src="<c:out value="${business.image}"/>" height="150px" width="150px"></img>
+				<a href="<c:out value="${business.linkwebpage}"/>">
+					<img alt="<c:out value="${business.image}"/>"
+					  src="/images/<c:out value="${business.image}"/>"
+					  height="150px" width="150px"></img>
+				</a>	  
 			</div>
 		</c:forEach>
-		<h1><c:out value="${business.name}"></c:out></h1>
 		 <div class="Comments">
 			<div id="Text">
 				<h4>Nos interesa tu opinion :</h4>
@@ -93,34 +97,33 @@
 		<div class="footer">
 			<div id="FooterIzquierda">
 				<h3>Contactanos</h3>
-				<img id="logocorreo" src="letra.png" height="30px" width="30px" />
+				<img id="logocorreo" src="/images/letra.png" height="30px" width="30px" />
 				<h6>lacasadelemprendedor@gmail.com</h6>
-				<img id="logowsp" src="llamada.png" height="30px" width="30px" />
+				<img id="logowsp" src="/images/llamada.png" height="30px" width="30px" />
 				<h6>+569 12345678</h6>
 
 			</div>
 			<div id="FooterCentro">
 				<div id="Instagram">
-					<img src="instagram.png" height="30px" width="30px" />
+					<img src="/images/instagram.png" height="30px" width="30px" />
 					<h5>La Casa Del Emprendedor</h5>
 				</div>
 				<div id="Facebook">
-					<img src="facebook.png" height="30px" width="30px" />
+					<img src="/images/facebook.png" height="30px" width="30px" />
 					<h5>La Casa Del Emprendedor</h5>
 				</div>
 				<div id="Copyright">
-					<img src="pngwing.com.png" height="30px" width="30px" />
-					<h5>2020 La Casa Del Emprendedor</h5>
+					<img src="/images/pngwing.com.png" height="30px" width="30px" />
+					<h5>2022 La Casa Del Emprendedor</h5>
 				</div>
 			</div>
-			<div id="FooterDerecha">
-				<h5>Metodos de pago</h5>			
+			<div id="FooterDerecha">			
 			</div>
 		</div>
 	</div>
 	</div>
 	<div class="publicidad">
-	<img src="anuncio.jpg" height="900px" width="175px" />
+	<img src="/images/anuncio.jpg" height="900px" width="175px" />
 	</div>
 </body>
 </html>

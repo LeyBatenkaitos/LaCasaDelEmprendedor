@@ -103,7 +103,7 @@ public class MainController {
     @GetMapping("/login")
     public String login(@RequestParam(value="error", required=false) String error,
     		@RequestParam(value="logout", required=false) String logout, 
-    		Model model,@ModelAttribute("comment")Comment comment) {
+    		Model model,@ModelAttribute("comment")Comment comment,Principal principal) {
         if(error != null) {
             model.addAttribute("errorMessage", "Credenciales inválidas, vuelva a ingresarlas.");
         }
@@ -111,7 +111,7 @@ public class MainController {
             model.addAttribute("logoutMessage", "Cierre de sesión exitoso.");
             return "redirect:/dashboard";
         }
-        return "loginPage";
+    	return "loginPage";       
     }
 				    			
 	@GetMapping("/dashboard/business/")
@@ -127,7 +127,6 @@ public class MainController {
 			@ModelAttribute("user")User user,
 			@ModelAttribute("category")Category category,
 			@ModelAttribute("bussines")Bussines bussines) {
-		
 		String username = principal.getName();
 		User actualUser = userService.findByUsername(username);
 		model.addAttribute("actualUser", actualUser);
