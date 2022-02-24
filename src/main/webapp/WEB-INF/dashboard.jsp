@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,17 +22,26 @@
 <link rel="stylesheet" href="/css/pruebasproyectovscode-1.css">
 <title>La Casa Del Emprendedor</title>
 </head>
-<body background="casa.jpg">
-	<div class="header">
-		<h1>La Casa Del Emprendedor</h1>
+<body>
+	<div class="publicidad">
+	<img src="/images/anuncio.jpg" height="900px" width="175px" />
 	</div>
+	<div class="container">
+	<a id="inicio" class="btn btn-sm btn-primary" href="/login">Iniciar sesión</a>
+	<header>				
+		<h1>La Casa Del Emprendedor</h1>		
+	</header>
 
 	<div class="main">
 		<nav class="navbar navbar-light" style="background-color: #b8e5fc;">
 			<div id="BarNav">
+			
 				<div id="Categorias">
 					<ul>
-						<li class="nav-item dropdown" style="list-style-type: none;">
+						<li id="botoninfo" style="list-style-type: none;" ><a class="btn btn-primary btn-sm activated" href="/information">Zona Informativa</a>
+						</li>
+						<li style="list-style-type: none;" id="botoninfo"><a href="/dashboard" class="btn btn-primary btn-sm activated">Página principal</a></li>					
+						<li class="nav-item dropdown" style="list-style-type: none; display: inline-block;">
 							<a class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Categorias </a>
@@ -45,17 +54,10 @@
 									</a></li>
 								</c:forEach>
 							</ul>
-						</li>
 					</ul>
+						
 				</div>
-				<div id="Search">
-				<a href="/admin">Iniciar sesión</a>
-				<span>
-				<form id="logoutForm" method="POST" action="/logout">
-        		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-       			<input type="submit" value="Cerrar sesión" />
-    			</form>
-				</span>	
+				<div id="Search">				
 					<form class="d-flex" method="GET" action="/dashboard/business/">
 						<input name="name" class="form-control me-2" type="text"
 							placeholder="Buscar" aria-label="Buscar">
@@ -66,56 +68,62 @@
 		</nav>
 		<c:forEach items="${businesses}" var="business">
 			<div id="subcontents">
-				<h2>
+				<h5>
 					<c:out value="${business.name}" />
-				</h2>
+				</h5>
+				<a href="<c:out value="${business.linkwebpage}"/>">
+					<img alt="<c:out value="${business.image}"/>"
+					  src="/images/<c:out value="${business.image}"/>"
+					  height="150px" width="150px"></img>
+				</a>	  
 			</div>
 		</c:forEach>
-	
-		<h1><c:out value="${business.name}"></c:out></h1>
-		<div class="Comments">
+		 <div class="Comments">
 			<div id="Text">
 				<h4>Nos interesa tu opinion :</h4>
 			<form:form action="/sendcomment" method="post" modelAttribute="comment">
 				<form:label path="content"></form:label>
-			<form:input type="text" path="content"/>
+			<form:textarea rows="5" cols="70" type="text " path="content" style="background-color: #b8e5fc;"/>
 			<form:errors path="content"></form:errors>	
-			<form:button type="submit">Create</form:button>
+			<br>
+			<form:button class="btn btn-outline-success" type="submit">Enviar</form:button>
+			
 			</form:form>
+			
 			</div>
-		</div>
+		</div> 
 
 
 		<div class="footer">
 			<div id="FooterIzquierda">
 				<h3>Contactanos</h3>
-				<img id="logocorreo" src="letra.png" height="30px" width="30px" />
+				<img id="logocorreo" src="/images/letra.png" height="30px" width="30px" />
 				<h6>lacasadelemprendedor@gmail.com</h6>
-				<img id="logowsp" src="llamada.png" height="30px" width="30px" />
+				<img id="logowsp" src="/images/llamada.png" height="30px" width="30px" />
 				<h6>+569 12345678</h6>
 
 			</div>
 			<div id="FooterCentro">
 				<div id="Instagram">
-					<img src="instagram.png" height="30px" width="30px" />
+					<img src="/images/instagram.png" height="30px" width="30px" />
 					<h5>La Casa Del Emprendedor</h5>
 				</div>
 				<div id="Facebook">
-					<img src="facebook.png" height="30px" width="30px" />
+					<img src="/images/facebook.png" height="30px" width="30px" />
 					<h5>La Casa Del Emprendedor</h5>
 				</div>
 				<div id="Copyright">
-					<img src="pngwing.com.png" height="30px" width="30px" />
-					<h5>2020 La Casa Del Emprendedor</h5>
+					<img src="/images/pngwing.com.png" height="30px" width="30px" />
+					<h5>2022 La Casa Del Emprendedor</h5>
 				</div>
 			</div>
-			<div id="FooterDerecha">
-				<h5>Metodos de pago</h5>
-				<img src="logowebpay.png" height="150px" width="200px" />
-
+			<div id="FooterDerecha">			
 			</div>
 		</div>
 	</div>
-
+	</div>
+	<div class="publicidad">
+	<img src="/images/anuncio.jpg" height="900px" width="175px" />
+	</div>
 </body>
 </html>

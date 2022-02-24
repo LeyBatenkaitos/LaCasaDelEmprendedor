@@ -1,0 +1,85 @@
+body{
+    background-color: #e3cda1;
+}
+
+h1{
+    text-align: center;
+    font-family: Baskerville Old Face;
+    width: 99%;
+    background-color: #997e67;
+    color: black;
+    height: 70px;
+    margin-left: 4px;
+    border-radius: 10px;
+    font-size: 50px;
+    margin-top: 15px;
+}
+#logo{
+    margin-left: 100px;
+    margin-top: -102px;
+    display: flex;  
+}
+.footer{
+    height: 145px;
+    display: flex;
+    background-color: #997e67;
+    margin-top: 478px;
+}
+.Contac, .Rsocial, .Pago{
+    width: 30%;
+    height: 120px;
+    padding: 15px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 110px;
+}
+.Rsocial{
+    padding: 50px 0px 0px 5px;
+    height: 100px;
+    width: 370px;
+    margin-left: 40px;
+}
+.contacto{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.logo-redsocial{
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+}
+.text-social{
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    font-size: 12px;
+    
+}
+.copyright{
+    width: 10px;
+    height: 10px;
+    
+}
+h6{
+    font-size: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: white;
+}
+.fono{
+    margin-left: -3px;
+    margin-top: 10px;
+}
+.name{
+    margin-top: 46px;
+    margin-left: 105px;
+    display: flex;
+}
+.btn{
+    margin-top: -18px;
+    display: flex;
+    margin-left: 174px;
+}

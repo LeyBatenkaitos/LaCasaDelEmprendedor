@@ -1,288 +1,169 @@
-2022-02-21 09:25:55.986  WARN 7312 --- [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=10h27m45s63ms570µs800ns).
-2022-02-21 09:33:48.554 ERROR 7312 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: Value must not be null!; nested exception is java.lang.IllegalArgumentException: Value must not be null!] with root cause
-
-java.lang.IllegalArgumentException: Value must not be null!
-	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.15.jar:5.3.15]
-	at org.springframework.data.jpa.repository.query.ParameterMetadataProvider$ParameterMetadata.prepare(ParameterMetadataProvider.java:236) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.QueryParameterSetterFactory$CriteriaQueryParameterSetterFactory.getAndPrepare(QueryParameterSetterFactory.java:324) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.QueryParameterSetterFactory$CriteriaQueryParameterSetterFactory.lambda$create$1(QueryParameterSetterFactory.java:317) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.setParameter(QueryParameterSetter.java:87) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:82) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:74) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.ParameterBinder.bindAndPrepare(ParameterBinder.java:96) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery$QueryPreparer.invokeBinding(PartTreeJpaQuery.java:324) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery$QueryPreparer.createQuery(PartTreeJpaQuery.java:243) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.doCreateQuery(PartTreeJpaQuery.java:106) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.createQuery(AbstractJpaQuery.java:227) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:128) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:155) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:143) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.6.1.jar:2.6.1]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.6.1.jar:2.6.1]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159) ~[spring-data-commons-2.6.1.jar:2.6.1]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) ~[spring-data-commons-2.6.1.jar:2.6.1]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.6.1.jar:2.6.1]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.15.jar:5.3.15]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.15.jar:5.3.15]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.15.jar:5.3.15]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.15.jar:5.3.15]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.6.1.jar:2.6.1]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.15.jar:5.3.15]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.15.jar:5.3.15]
-	at jdk.proxy6/jdk.proxy6.$Proxy153.findByBussinesNotContains(Unknown Source) ~[na:na]
-	at com.casa.emprendedor.services.impl.CategoryServiceImpl.findAllCategoryNoBussines(CategoryServiceImpl.java:31) ~[classes/:na]
-	at com.casa.emprendedor.controllers.BussinesControllers.showBussines(BussinesControllers.java:50) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.15.jar:5.3.15]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:150) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.6.1.jar:5.6.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-02-21 09:33:57.047  WARN 7312 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "letra.png"]
-2022-02-21 09:33:57.088  WARN 7312 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "llamada.png"]
-2022-02-21 09:33:57.110  WARN 7312 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "instagram.png"]
-2022-02-21 09:33:57.125  WARN 7312 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "facebook.png"]
-2022-02-21 09:33:57.126  WARN 7312 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "pngwing.com.png"]
-2022-02-21 09:33:57.125  WARN 7312 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "casa.jpg"]
-2022-02-21 09:33:57.128  WARN 7312 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "logowebpay.png"]
-2022-02-21 09:33:58.827  WARN 7312 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "letra.png"]
-2022-02-21 09:33:58.828  WARN 7312 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "llamada.png"]
-2022-02-21 09:33:58.836  WARN 7312 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "instagram.png"]
-2022-02-21 09:33:58.836  WARN 7312 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "facebook.png"]
-2022-02-21 09:33:58.836  WARN 7312 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "pngwing.com.png"]
-2022-02-21 09:33:58.844  WARN 7312 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "logowebpay.png"]
-2022-02-21 09:33:58.856  WARN 7312 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "casa.jpg"]
-2022-02-21 09:34:00.610  WARN 7312 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "letra.png"]
-2022-02-21 09:34:00.621  WARN 7312 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "llamada.png"]
-2022-02-21 09:34:00.621  WARN 7312 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "instagram.png"]
-2022-02-21 09:34:00.628  WARN 7312 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "facebook.png"]
-2022-02-21 09:34:00.632  WARN 7312 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "logowebpay.png"]
-2022-02-21 09:34:00.634  WARN 7312 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "pngwing.com.png"]
-2022-02-21 09:34:00.648  WARN 7312 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "casa.jpg"]
-2022-02-21 09:34:02.150  WARN 7312 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "letra.png"]
-2022-02-21 09:34:02.156  WARN 7312 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "llamada.png"]
-2022-02-21 09:34:02.157  WARN 7312 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "facebook.png"]
-2022-02-21 09:34:02.156  WARN 7312 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "instagram.png"]
-2022-02-21 09:34:02.159  WARN 7312 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "pngwing.com.png"]
-2022-02-21 09:34:02.168  WARN 7312 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "logowebpay.png"]
-2022-02-21 09:34:02.175  WARN 7312 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "casa.jpg"]
-2022-02-21 15:28:49.479  INFO 7312 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 15:28:49.937  INFO 7312 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2022-02-21 15:28:49.977  INFO 7312 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2022-02-21 15:28:55.106  INFO 7312 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on DESKTOP-7RH3MJD with PID 7312 (C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor\target\classes started by MI PC in C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor)
-2022-02-21 15:28:55.106  INFO 7312 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
-2022-02-21 15:29:04.426  INFO 16476 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on DESKTOP-7RH3MJD with PID 16476 (C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor\target\classes started by MI PC in C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor)
-2022-02-21 15:29:04.428  INFO 16476 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
-2022-02-21 15:29:04.533  INFO 16476 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-02-21 15:29:04.534  INFO 16476 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-02-21 15:29:06.258  INFO 16476 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-21 15:29:06.407  INFO 16476 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
-2022-02-21 15:29:07.529  INFO 16476 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-21 15:29:07.547  INFO 16476 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-21 15:29:07.548  INFO 16476 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-21 15:29:07.990  INFO 16476 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2022-02-21 15:29:08.009  INFO 16476 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-21 15:29:08.009  INFO 16476 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3474 ms
-2022-02-21 15:29:08.271  INFO 16476 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-21 15:29:08.364  INFO 16476 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
-2022-02-21 15:29:08.636  INFO 16476 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-21 15:29:08.847  INFO 16476 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-21 15:29:09.390  INFO 16476 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-21 15:29:09.439  INFO 16476 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-02-21 15:29:11.562  INFO 16476 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-21 15:29:11.581  INFO 16476 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 15:29:11.670  WARN 16476 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-21 15:29:12.632  INFO 16476 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c3bed5e, org.springframework.security.web.context.SecurityContextPersistenceFilter@59f41c31, org.springframework.security.web.header.HeaderWriterFilter@142d3bb8, org.springframework.security.web.authentication.logout.LogoutFilter@22d671e6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5f615618, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@314d5c7e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25793295, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@570ec3f5, org.springframework.security.web.session.SessionManagementFilter@79a8b3d7, org.springframework.security.web.access.ExceptionTranslationFilter@9ce9934, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77a78463]
-2022-02-21 15:29:13.217  INFO 16476 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-02-21 15:29:13.331  INFO 16476 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-21 15:29:13.347  INFO 16476 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 9.869 seconds (JVM running for 13.069)
-2022-02-21 15:29:18.660  INFO 16476 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-02-21 15:29:18.662  INFO 16476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-02-21 15:29:18.664  INFO 16476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-02-21 15:37:05.589  INFO 16476 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-02-21 15:37:05.627  INFO 16476 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 15:37:05.649  INFO 16476 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-02-21 15:37:05.738  INFO 16476 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-02-21 15:37:10.105  INFO 6012 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on DESKTOP-7RH3MJD with PID 6012 (C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor\target\classes started by MI PC in C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor)
-2022-02-21 15:37:10.108  INFO 6012 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
-2022-02-21 15:37:10.214  INFO 6012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-02-21 15:37:10.216  INFO 6012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-02-21 15:37:11.660  INFO 6012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-21 15:37:11.806  INFO 6012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 5 JPA repository interfaces.
-2022-02-21 15:37:12.945  INFO 6012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-21 15:37:12.960  INFO 6012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-21 15:37:12.961  INFO 6012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-21 15:37:13.391  INFO 6012 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2022-02-21 15:37:13.413  INFO 6012 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-21 15:37:13.414  INFO 6012 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3198 ms
-2022-02-21 15:37:13.693  INFO 6012 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-21 15:37:13.785  INFO 6012 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
-2022-02-21 15:37:14.065  INFO 6012 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-21 15:37:14.271  INFO 6012 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-21 15:37:14.858  INFO 6012 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-21 15:37:14.915  INFO 6012 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-02-21 15:37:16.643  INFO 6012 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-21 15:37:16.660  INFO 6012 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 15:37:16.846  WARN 6012 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-21 15:37:17.950  INFO 6012 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c33409b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7380b991, org.springframework.security.web.header.HeaderWriterFilter@3341a503, org.springframework.security.web.authentication.logout.LogoutFilter@5cbbedf5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@206e011d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e312b89, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4efad922, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6401a96f, org.springframework.security.web.session.SessionManagementFilter@534a983b, org.springframework.security.web.access.ExceptionTranslationFilter@79181ee1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a7f0cad]
-2022-02-21 15:37:18.539  INFO 6012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-02-21 15:37:18.653  INFO 6012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-21 15:37:18.668  INFO 6012 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 9.293 seconds (JVM running for 10.493)
-2022-02-21 15:37:24.205  INFO 6012 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-02-21 15:37:24.205  INFO 6012 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-02-21 15:37:24.207  INFO 6012 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-02-21 15:38:34.968  INFO 6012 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-02-21 15:38:35.001  INFO 6012 --- [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 15:38:35.006  INFO 6012 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-02-21 15:38:35.019  INFO 6012 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-02-21 15:38:39.978  INFO 15204 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on DESKTOP-7RH3MJD with PID 15204 (C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor\target\classes started by MI PC in C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor)
-2022-02-21 15:38:39.980  INFO 15204 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
-2022-02-21 15:38:40.160  INFO 15204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-02-21 15:38:40.161  INFO 15204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-02-21 15:38:42.345  INFO 15204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-21 15:38:42.511  INFO 15204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 5 JPA repository interfaces.
-2022-02-21 15:38:43.732  INFO 15204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-21 15:38:43.754  INFO 15204 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-21 15:38:43.755  INFO 15204 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-21 15:38:44.218  INFO 15204 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2022-02-21 15:38:44.239  INFO 15204 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-21 15:38:44.241  INFO 15204 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4075 ms
-2022-02-21 15:38:44.532  INFO 15204 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-21 15:38:44.865  INFO 15204 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
-2022-02-21 15:38:45.573  INFO 15204 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-21 15:38:45.832  INFO 15204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-21 15:38:46.727  INFO 15204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-21 15:38:46.782  INFO 15204 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-02-21 15:38:49.894  INFO 15204 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-21 15:38:49.911  INFO 15204 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 15:38:50.012  WARN 15204 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-21 15:38:51.056  INFO 15204 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29107f0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@16a6b161, org.springframework.security.web.header.HeaderWriterFilter@6983ef2a, org.springframework.security.web.authentication.logout.LogoutFilter@5d05d020, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64a7710e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@210a9352, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@507974a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bf26658, org.springframework.security.web.session.SessionManagementFilter@137cad80, org.springframework.security.web.access.ExceptionTranslationFilter@46ada5ba, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c57dd04]
-2022-02-21 15:38:51.716  INFO 15204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-02-21 15:38:51.802  INFO 15204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-21 15:38:51.821  INFO 15204 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 12.685 seconds (JVM running for 14.186)
-2022-02-21 15:38:55.685  INFO 15204 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-02-21 15:38:55.687  INFO 15204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-02-21 15:38:55.688  INFO 15204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-02-21 17:09:37.724  INFO 15204 --- [RMI TCP Connection(95)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-02-21 17:09:37.756  INFO 15204 --- [RMI TCP Connection(95)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 17:09:37.760  INFO 15204 --- [RMI TCP Connection(95)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-02-21 17:09:37.767  INFO 15204 --- [RMI TCP Connection(95)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-02-21 17:09:42.655  INFO 12432 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on DESKTOP-7RH3MJD with PID 12432 (C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor\target\classes started by MI PC in C:\Users\MI PC\Documents\GitHub\LaCasaDelEmprendedor)
-2022-02-21 17:09:42.657  INFO 12432 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
-2022-02-21 17:09:42.781  INFO 12432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-02-21 17:09:42.782  INFO 12432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-02-21 17:09:44.313  INFO 12432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-21 17:09:44.465  INFO 12432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 5 JPA repository interfaces.
-2022-02-21 17:09:45.689  INFO 12432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-21 17:09:45.710  INFO 12432 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-21 17:09:45.711  INFO 12432 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-21 17:09:46.271  INFO 12432 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2022-02-21 17:09:46.310  INFO 12432 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-21 17:09:46.312  INFO 12432 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3528 ms
-2022-02-21 17:09:46.587  INFO 12432 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-21 17:09:46.678  INFO 12432 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
-2022-02-21 17:09:47.010  INFO 12432 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-21 17:09:47.302  INFO 12432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-21 17:09:48.046  INFO 12432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-21 17:09:48.116  INFO 12432 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-02-21 17:09:50.889  INFO 12432 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-21 17:09:50.911  INFO 12432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-21 17:09:51.063  WARN 12432 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-21 17:09:52.845  INFO 12432 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1852b9dd, org.springframework.security.web.context.SecurityContextPersistenceFilter@1cc98ebf, org.springframework.security.web.header.HeaderWriterFilter@21b094e3, org.springframework.security.web.authentication.logout.LogoutFilter@3263c964, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@ae8c217, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a2cda60, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28fba398, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@343de30, org.springframework.security.web.session.SessionManagementFilter@25793295, org.springframework.security.web.access.ExceptionTranslationFilter@6da04b0c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@94fa873]
-2022-02-21 17:09:53.481  INFO 12432 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-02-21 17:09:53.554  INFO 12432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-21 17:09:53.571  INFO 12432 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 11.835 seconds (JVM running for 13.307)
+2022-02-24 00:10:38.773  INFO 12104 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on LAPTOP-PGA3I061 with PID 12104 (C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor\target\classes started by atarv in C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor)
+2022-02-24 00:10:38.784  INFO 12104 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
+2022-02-24 00:10:38.866  INFO 12104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 00:10:38.867  INFO 12104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 00:10:39.937  INFO 12104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-24 00:10:40.050  INFO 12104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 5 JPA repository interfaces.
+2022-02-24 00:10:40.975  INFO 12104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http) 9090 (http)
+2022-02-24 00:10:40.992  INFO 12104 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Initializing ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:10:40.997  INFO 12104 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-24 00:10:40.997  INFO 12104 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-24 00:10:41.388  INFO 12104 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-02-24 00:10:41.407  INFO 12104 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-24 00:10:41.407  INFO 12104 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2539 ms
+2022-02-24 00:10:41.653  INFO 12104 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 00:10:41.748  INFO 12104 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 00:10:42.028  INFO 12104 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 00:10:42.192  INFO 12104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-24 00:10:42.721  INFO 12104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-24 00:10:42.771  INFO 12104 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-24 00:10:44.077  INFO 12104 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 00:10:44.088  INFO 12104 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:10:44.154  WARN 12104 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-24 00:10:44.938  INFO 12104 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@422d8907, org.springframework.security.web.context.SecurityContextPersistenceFilter@43234794, org.springframework.security.web.header.HeaderWriterFilter@5bb1fb64, org.springframework.security.web.authentication.logout.LogoutFilter@7efee24e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c9e6014, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@150c76d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68b5b8a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44274bd1, org.springframework.security.web.session.SessionManagementFilter@29d4f054, org.springframework.security.web.access.ExceptionTranslationFilter@7041eb79, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1bff8dfd]
+2022-02-24 00:10:45.429  INFO 12104 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-24 00:10:45.486  INFO 12104 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Starting ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:10:45.505  INFO 12104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) 9090 (http) with context path ''
+2022-02-24 00:10:45.517  INFO 12104 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 7.495 seconds (JVM running for 8.603)
+2022-02-24 00:10:51.178  INFO 12104 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 00:10:51.179  INFO 12104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-24 00:10:51.180  INFO 12104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-24 00:27:07.935  INFO 12104 --- [RMI TCP Connection(21)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-24 00:27:07.972  INFO 12104 --- [RMI TCP Connection(21)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:27:07.976  INFO 12104 --- [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-24 00:27:07.987  INFO 12104 --- [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-24 00:27:11.993  INFO 19136 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on LAPTOP-PGA3I061 with PID 19136 (C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor\target\classes started by atarv in C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor)
+2022-02-24 00:27:11.994  INFO 19136 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
+2022-02-24 00:27:12.069  INFO 19136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 00:27:12.069  INFO 19136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 00:27:13.160  INFO 19136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-24 00:27:13.269  INFO 19136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 5 JPA repository interfaces.
+2022-02-24 00:27:14.240  INFO 19136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http) 9090 (http)
+2022-02-24 00:27:14.258  INFO 19136 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Initializing ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:27:14.262  INFO 19136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-24 00:27:14.262  INFO 19136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-24 00:27:14.619  INFO 19136 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-02-24 00:27:14.637  INFO 19136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-24 00:27:14.637  INFO 19136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2567 ms
+2022-02-24 00:27:14.869  INFO 19136 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 00:27:14.963  INFO 19136 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 00:27:15.224  INFO 19136 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 00:27:15.400  INFO 19136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-24 00:27:15.865  INFO 19136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-24 00:27:15.922  INFO 19136 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-24 00:27:17.231  INFO 19136 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 00:27:17.241  INFO 19136 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:27:17.299  WARN 19136 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-24 00:27:18.081  INFO 19136 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f0055e3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3936ce69, org.springframework.security.web.header.HeaderWriterFilter@1285d6c8, org.springframework.security.web.authentication.logout.LogoutFilter@79c209bd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@16084121, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c4c75f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7744e931, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6018b9f, org.springframework.security.web.session.SessionManagementFilter@6f5c41d, org.springframework.security.web.access.ExceptionTranslationFilter@6f1392da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@16ff707c]
+2022-02-24 00:27:18.639  INFO 19136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-24 00:27:18.690  INFO 19136 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Starting ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:27:18.718  INFO 19136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) 9090 (http) with context path ''
+2022-02-24 00:27:18.733  INFO 19136 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 7.299 seconds (JVM running for 8.502)
+2022-02-24 00:27:18.800  INFO 19136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 00:27:18.800  INFO 19136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-24 00:27:18.801  INFO 19136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-24 00:29:18.002  INFO 19136 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-24 00:29:18.040  INFO 19136 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:29:18.043  INFO 19136 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-24 00:29:18.056  INFO 19136 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-24 00:33:09.219  INFO 12928 --- [main] c.e.LaCasaDelEmprendedorApplicationTests : Starting LaCasaDelEmprendedorApplicationTests using Java 17.0.1 on LAPTOP-PGA3I061 with PID 12928 (started by atarv in C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor)
+2022-02-24 00:33:09.222  INFO 12928 --- [main] c.e.LaCasaDelEmprendedorApplicationTests : No active profile set, falling back to default profiles: default
+2022-02-24 00:33:10.743  INFO 12928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-24 00:33:10.936  INFO 12928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169 ms. Found 5 JPA repository interfaces.
+2022-02-24 00:33:12.428  INFO 12928 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 00:33:12.536  INFO 12928 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 00:33:12.900  INFO 12928 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 00:33:13.208  INFO 12928 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-24 00:33:13.809  INFO 12928 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-24 00:33:13.850  INFO 12928 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-24 00:33:15.264  INFO 12928 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 00:33:15.277  INFO 12928 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:33:15.402  WARN 12928 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-24 00:33:16.765  INFO 12928 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7bb3294c, org.springframework.security.web.context.SecurityContextPersistenceFilter@73dd3a46, org.springframework.security.web.header.HeaderWriterFilter@4aadf144, org.springframework.security.web.authentication.logout.LogoutFilter@57abe94d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@65234a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@257708e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66e434e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f391e52, org.springframework.security.web.session.SessionManagementFilter@63053b71, org.springframework.security.web.access.ExceptionTranslationFilter@1e2c0292, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@30a6984c]
+2022-02-24 00:33:18.260  INFO 12928 --- [main] c.e.LaCasaDelEmprendedorApplicationTests : Started LaCasaDelEmprendedorApplicationTests in 9.636 seconds (JVM running for 11.469)
+2022-02-24 00:33:18.677  INFO 12928 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:33:18.681  INFO 12928 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-24 00:33:18.700  INFO 12928 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-24 00:44:29.015  INFO 20680 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on LAPTOP-PGA3I061 with PID 20680 (C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor\target\classes started by atarv in C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor)
+2022-02-24 00:44:29.018  INFO 20680 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
+2022-02-24 00:44:29.091  INFO 20680 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 00:44:29.092  INFO 20680 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 00:44:30.169  INFO 20680 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-24 00:44:30.278  INFO 20680 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 5 JPA repository interfaces.
+2022-02-24 00:44:31.187  INFO 20680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http) 9090 (http)
+2022-02-24 00:44:31.204  INFO 20680 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Initializing ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:44:31.209  INFO 20680 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-24 00:44:31.209  INFO 20680 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-24 00:44:31.634  INFO 20680 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-02-24 00:44:31.654  INFO 20680 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-24 00:44:31.655  INFO 20680 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2563 ms
+2022-02-24 00:44:31.921  INFO 20680 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 00:44:32.011  INFO 20680 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 00:44:32.299  INFO 20680 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 00:44:32.481  INFO 20680 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-24 00:44:32.997  INFO 20680 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-24 00:44:33.043  INFO 20680 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-24 00:44:34.289  INFO 20680 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 00:44:34.300  INFO 20680 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:44:34.361  WARN 20680 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-24 00:44:35.138  INFO 20680 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73fb4f1e, org.springframework.security.web.context.SecurityContextPersistenceFilter@17277d13, org.springframework.security.web.header.HeaderWriterFilter@70e37a03, org.springframework.security.web.authentication.logout.LogoutFilter@23b42a09, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5ef51ebc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@699a760d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c615517, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bfd50c4, org.springframework.security.web.session.SessionManagementFilter@22ee42ff, org.springframework.security.web.access.ExceptionTranslationFilter@47f8726b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f149b26]
+2022-02-24 00:44:35.638  INFO 20680 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-24 00:44:35.691  INFO 20680 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Starting ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:44:35.713  INFO 20680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) 9090 (http) with context path ''
+2022-02-24 00:44:35.728  INFO 20680 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 7.246 seconds (JVM running for 8.331)
+2022-02-24 00:47:48.430  INFO 20680 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-24 00:47:48.462  INFO 20680 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:47:48.465  INFO 20680 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-24 00:47:48.475  INFO 20680 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-24 00:54:04.764  INFO 15100 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Starting LaCasaDelEmprendedorApplication using Java 17.0.1 on LAPTOP-PGA3I061 with PID 15100 (C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor\target\classes started by atarv in C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor)
+2022-02-24 00:54:04.766  INFO 15100 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : No active profile set, falling back to default profiles: default
+2022-02-24 00:54:04.826  INFO 15100 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 00:54:04.827  INFO 15100 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 00:54:05.774  INFO 15100 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-24 00:54:05.877  INFO 15100 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2022-02-24 00:54:06.714  INFO 15100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http) 9090 (http)
+2022-02-24 00:54:06.727  INFO 15100 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Initializing ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:54:06.731  INFO 15100 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-24 00:54:06.732  INFO 15100 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-24 00:54:07.088  INFO 15100 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-02-24 00:54:07.106  INFO 15100 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-24 00:54:07.106  INFO 15100 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2278 ms
+2022-02-24 00:54:07.318  INFO 15100 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 00:54:07.392  INFO 15100 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 00:54:07.595  INFO 15100 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 00:54:07.738  INFO 15100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-24 00:54:08.177  INFO 15100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-24 00:54:08.222  INFO 15100 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-24 00:54:09.340  INFO 15100 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 00:54:09.352  INFO 15100 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:54:09.406  WARN 15100 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-24 00:54:10.144  INFO 15100 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29ef7671, org.springframework.security.web.context.SecurityContextPersistenceFilter@47652603, org.springframework.security.web.header.HeaderWriterFilter@340347ca, org.springframework.security.web.authentication.logout.LogoutFilter@3936ce69, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62568f6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47f8726b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7cff33ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31305cc4, org.springframework.security.web.session.SessionManagementFilter@56a101c5, org.springframework.security.web.access.ExceptionTranslationFilter@57e00fad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10579248]
+2022-02-24 00:54:10.609  INFO 15100 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-24 00:54:10.657  INFO 15100 --- [restartedMain] org.apache.coyote.ajp.AjpNioProtocol     : Starting ProtocolHandler ["ajp-nio-127.0.0.1-9090"]
+2022-02-24 00:54:10.677  INFO 15100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) 9090 (http) with context path ''
+2022-02-24 00:54:10.688  INFO 15100 --- [restartedMain] c.c.e.LaCasaDelEmprendedorApplication    : Started LaCasaDelEmprendedorApplication in 6.411 seconds (JVM running for 7.554)
+2022-02-24 00:54:33.090  INFO 15100 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 00:54:33.091  INFO 15100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-24 00:54:33.092  INFO 15100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-24 00:54:54.516  INFO 15100 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-24 00:54:54.549  INFO 15100 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:54:54.555  INFO 15100 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-24 00:54:54.567  INFO 15100 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-24 00:56:23.408  INFO 21032 --- [main] c.e.LaCasaDelEmprendedorApplicationTests : Starting LaCasaDelEmprendedorApplicationTests using Java 17.0.1 on LAPTOP-PGA3I061 with PID 21032 (started by atarv in C:\Users\atarv\OneDrive\Documentos\GitHub\LaCasaDelEmprendedor)
+2022-02-24 00:56:23.411  INFO 21032 --- [main] c.e.LaCasaDelEmprendedorApplicationTests : No active profile set, falling back to default profiles: default
+2022-02-24 00:56:24.765  INFO 21032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-24 00:56:24.935  INFO 21032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 5 JPA repository interfaces.
+2022-02-24 00:56:26.134  INFO 21032 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 00:56:26.240  INFO 21032 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 00:56:26.548  INFO 21032 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 00:56:26.845  INFO 21032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-24 00:56:27.417  INFO 21032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-24 00:56:27.473  INFO 21032 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-24 00:56:28.893  INFO 21032 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 00:56:28.908  INFO 21032 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:56:29.012  WARN 21032 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-24 00:56:30.579  INFO 21032 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f391e52, org.springframework.security.web.context.SecurityContextPersistenceFilter@bae5e58, org.springframework.security.web.header.HeaderWriterFilter@68a97fc1, org.springframework.security.web.authentication.logout.LogoutFilter@51b11186, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4004bfba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18c26588, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a7d6976, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5857d723, org.springframework.security.web.session.SessionManagementFilter@4687c184, org.springframework.security.web.access.ExceptionTranslationFilter@69988d42, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45302e66]
+2022-02-24 00:56:32.328  INFO 21032 --- [main] c.e.LaCasaDelEmprendedorApplicationTests : Started LaCasaDelEmprendedorApplicationTests in 9.491 seconds (JVM running for 11.236)
+2022-02-24 00:56:32.750  INFO 21032 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-24 00:56:32.754  INFO 21032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-24 00:56:32.786  INFO 21032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
