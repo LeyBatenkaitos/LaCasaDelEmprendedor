@@ -1,3 +1,4 @@
+
 body {
 	background-color: #e4f2ff;
 	width: 100%;
@@ -179,6 +180,48 @@ form#comment {
 	margin-top: 10px;
 	text-align: center;
 	font-family: Vivaldi;
+
+*{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;}
+body{
+    width: 85%;
+    display: inline-block;
+    background-color:#e4f2ff;
+}
+header{
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:#e4f2ff;
+    width: 90%;
+    display: inline-block;
+    flex-flow: row wrap; 
+    height: 100px;
+    margin-left: 150px;
+    vertical-align: top;
+
+}
+
+#logopagina{
+    width: 40%;
+    height: 35%;
+    margin-left: 50px;
+    background-color: #b8e5fc;
+}
+h1{
+    text-align: center;
+    font-family: Baskerville Old Face;
+    width: 90%;
+    background-color: #b8e5fc;
+    color: black;
+    height: 50px;
+    margin-left: 50px;
+    border-radius: 10px;
+    
+}
+#tituloIzquierda{
+    flex-grow: 1;
+    width: 30%;
+}
+.main{
 	vertical-align: top;
 }
 
