@@ -46,6 +46,7 @@ public class BussinesControllers {
 	@GetMapping("/bussines/{id}")
 	public String showBussines(@PathVariable("id")long id, Model model) {
 		Bussines bussines = bService.findBussines(id);
+		List<Bussines> busines= bService.allBussines();
 		model.addAttribute("businesses", bussines);
 		List<Category> category = cService.findAllCategoryNoBussines(bussines);
 		model.addAttribute("categories", category);

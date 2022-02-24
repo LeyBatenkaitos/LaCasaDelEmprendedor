@@ -42,6 +42,8 @@ public class Bussines {
 	private String description;
 	@NotNull
 	private String linkwebpage;
+	@NotNull
+	private String image;
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;

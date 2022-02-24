@@ -1,172 +1,193 @@
-body{
-    width: 85%;
-    display: inline-block;
-    background-color:#e4f2ff;
-}
-header{
-    color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color:#e4f2ff;
-    width: 90%;
-    display: inline-block;
-    flex-flow: row wrap; 
-    height: 100px;
-    margin-left: 150px;
-    vertical-align: top;
-
+body {
+	background-color: #e4f2ff;
+	width: 100%;
+	display: inline-block;
 }
 
-#logopagina{
-    width: 40%;
-    height: 35%;
-    margin-left: 50px;
-    background-color: #b8e5fc;
+.container {
+	width: 100%;
+	display: inline-block
 }
-h1{
-    text-align: center;
-    font-family: Baskerville Old Face;
-    width: 90%;
-    background-color: #b8e5fc;
-    color: black;
-    height: 50px;
-    margin-left: 50px;
-    border-radius: 10px;
-    
-}
-#tituloIzquierda{
-    flex-grow: 1;
-    width: 30%;
-}
-.main{
+
+header {
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	background-color: #b8e5fc;
+	width: 100%;
+	display: inline-block;
+	flex-flow: row wrap;
+	height: 15%;
 	vertical-align: top;
-	margin-left: 150px;
-    background-color:#e4f2ff;
-    width: 90%;
-    height: 100%;
-    background-image: url("casa.jpg");
-    
+	text-align: center;
+	border-radius: 10px;
+	margin-top: 35px;
+}
 
+#logopagina {
+	width: 30%;
+	height: 35%;
+	margin-left: 50px;
+	background-color: #b8e5fc;
 }
-#BarNav{
-    width: 90%;
-    display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-#Categorias{
-    flex-grow: 1;
-    list-style: none;
-    width: 300px;
-}
-a{
-    size: 24px;
-}
-#Search{
-    flex-grow: 1;
-    text-align: right;
-    width: 5%;
-}
-.main h1{
-    text-align: center;
-    padding: 5px;
-    
-}
-#subcontents{
-    width: 200px;
-    height: 200px;
-    margin-left: 4%;
-    background-color: #b8e5fc;
-    display: inline-block;
-    margin-top: 10px;
-    text-align: center;
-    font-family: Vivaldi;
-}
-.Comments{
-    width: 90%;
-    height: 250px;
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: #b8e5fc;
-    margin-top: 10px;
-    display: flex;
-}
-#Text{
-    width: 50%;
-    height:300px ;
-}
-input{
-    width: 25%;
-    height: 7%;
-    display: inline-block;
-    margin-left: 40%;
-}
-#logocorreo{
-    display: flex;
 
+.main {
+	vertical-align: top;
+	background-color: #e4f2ff;
+	width: 100%;
+	height: 100%;
+	background-image: url("casa.jpg");
+	display: inline-block;
+	margin-top: 25px;
 }
-#comentarios{
-    width: 50%;
-    height: 300px;
-    margin-left: 25%;
-    display: flex;
-    margin-top: 10px;
-    background-color: #b8e5fc;
-    flex-grow: 1;
-    border: solid 2px black;
-}
-h4{
-    width: 50%;
-    height: 100px;
-    text-align: center;
-}
-.footer{
-    width: 100%;
-    background-color:#b8e5fc;
-    height: 200px;
-    display: flex;
-    margin-top: 10px;
-}
-.row{
-    height: 90%;
-    padding: 5px;
-    text-align: center;
-}
-#FooterIzquierda{
-    flex-grow: 1;
-    width: 30%;
-    margin-left: 50px;
-}
-#FooterDerecha{
-    flex-grow: 1;
-    width: 30%;
-    text-align: right;
-    margin-right: 50px;
-}
-#FooterCentro{
-    flex-grow: 1;
-    width: 30%;
-    text-align: center;
-}
-#Instagram{
-    width: 50%;
-    height: 60px;
-    display: flex;
-}
-#Facebook{
-    width: 50%;
-    height:60px ;
-    position: absolute;
-    top: 1075px;
-    display: flex;
-    left: 900px;
 
+#BarNav {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	list-style: none;
+	margin-left: 5%;
+	margin-right: 5%;
 }
-#Copyright{
-    width: 50%;
-    height: 60px;
-    position: absolute;
-    left: 430px;
-    top:1180px;
+
+#Categorias {
+	flex-grow: 1;
+	list-style: none;
+	width: 300px;
+}
+
+a {
+	size: 20px;
+}
+
+#Search {
+	flex-grow: 1;
+	text-align: right;
+	width: 5%;
+}
+
+.Comments {
+	width: 100%;
+	height: 250px;
+	background-color: #b8e5fc;
+	margin-top: 25px;
+}
+
+#Text {
+	width: 90%;
+	height: 250px;
+}
+
+input {
+	width: 50%;
+	height: 40%;
+	display: inline-block;
+	margin-left: 20%;
+}
+
+#logocorreo {
+	display: flex;
+}
+
+#comentarios {
+	width: 50%;
+	height: 300px;
+	margin-left: 5%;
+	display: flex;
+	margin-top: 10px;
+	background-color: #b8e5fc;
+	flex-grow: 1;
+	border: solid 2px black;
+}
+
+h4 {
+	width: 50%;
+	height: 30px;
+	text-align: center;
+}
+
+.footer {
+	width: 100%;
+	background-color: #b8e5fc;
+	height: 15%;
+	display: flex;
+	margin-top: 25px;
+}
+
+.row {
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+#FooterIzquierda {
+	width: 30%;
+	margin-left: 25px;
+	display: inline-block;
+}
+
+#FooterDerecha {
+	flex-grow: 1;
+	width: 30%;
+	text-align: right;
+	margin-right: 50px;
+}
+
+#FooterCentro {
+	width: 30%;
+	text-align: center;
+}
+
+#Instagram {
+	width: 30%;
+	height: 40px;
+	display: inline-block;
+}
+
+#Facebook {
+	width: 30%;
+	height: 40px;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#Copyright {
+	width: 50%;
+	height: 40px;
+	display: inline-block;
+}
+
+form#comment {
+	width: 100%;
+	height: 250px;
+}
+
+.publicidad {
+	height: 850px;
+	width: 175px;
+	background-color: burlywood;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#subcontents {
+	width: 200px;
+	height: 200px;
+	margin-left: 4%;
+	background-color: #b8e5fc;
+	display: inline-block;
+	margin-top: 10px;
+	text-align: center;
+	font-family: Vivaldi;
+	vertical-align: top;
+}
+
+#inicio {
+	position: absolute;
+	left: 200px;
+}
+#botoninfo{
+	position: absolute;
+	left: 220px;
+	top: 15px;
 }

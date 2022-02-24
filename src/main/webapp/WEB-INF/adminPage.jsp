@@ -51,6 +51,12 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+								<div class="col-md-8">
+									<form:input path="image" id="image" name="image" type="file" placeholder="image" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
 								<div class="col-md-12 text-center">
 									<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 								</div>

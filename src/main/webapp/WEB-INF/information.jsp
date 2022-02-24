@@ -12,10 +12,9 @@
         <div id="container">
             <header>
                 <img id="logo" src="logo.png" alt="Logo">
-                <center>
-                    <h1 >La Casa Del Emprendedor</h1>
-                </center>      
+                    <h1 >La Casa Del Emprendedor</h1>      
             </header>
+            <a href="/dashboard" class="btn btn-primary btn-sm">Inicio</a>
             <main>
                 <div class="box">
                     <h2 class="titulo">Tips para Emprender</h2>
@@ -55,7 +54,7 @@
                             Si no dispones de un gran capital para iniciar tu proyecto, es necesario que te informes 
                             de las ayudas o subvenciones que tanto las instituciones locales o estatales proporcionan.</li>
                     </ul>
-                    <h4>Juntos a estos tips les dejaremos los enlaces a los beneficios que ofrece el estado y algunas empresas privados
+                    <h4>Juntos a estos tips les dejaremos los enlaces a los beneficios que ofrece el estado y algunas empresas privadas
                         para beneficio y crecimiento de los emprendedores del país en ámbito informativo y económico >>>
                     </h4>
                     
@@ -82,7 +81,7 @@
                     <a style="text-decoration: none; color: #102938; font-size: 13px;" href="lacasadelemprendedorcl@gmail.com">lacasadelemprendedorcl@gmail.com</a>
                     <br>
                     <img class="contacto" src="llamada.png" alt="llamada">
-                    <p style="display: inline-block; color: #102938;"> +569 12345678</p>
+                    <p style="display: inline-block; color: #102938;"> +569 54872442</p>
                 </div>
                 <div class="Rsocial">
                     <a style="text-decoration: none;" target="_blank" href="https://www.facebook.com/profile.php?id=100077688296226" > 
@@ -97,10 +96,6 @@
                         <img class="copyright" src="pngwing.com.png" alt="copyright">
                         2022 La Casa del Emprendedor
                     </h6>
-
-                </div>
-                <div class="Pago" style="width: 256px;">
-                    <h3 class="final">Método de Pago</h3>
                 </div>
             </footer>
         </div>
